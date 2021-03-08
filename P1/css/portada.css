@@ -1,0 +1,51 @@
+html{
+   background-color:seashell;
+}
+
+body{
+    margin: 0;
+    width:auto;
+    background-color:rgb(225, 243, 174);
+    border: 2.5px solid black;
+}
+
+.cabecera{
+    overflow: hidden;
+    width: auto;
+    background-color:rgb(161, 201, 235);
+    border: 1.5px solid black;
+}
+
+h1{
+    margin: 0;
+    padding-bottom: 1%;
+    text-align: center;
+    color:steelblue;
+    font-size: 50px; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
+    font-family: "Open Sans", sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */   
+    text-shadow: 3px 3px 1px black;
+}
+
+img{
+    float:left;
+    margin-top: -4.5%;
+    margin-left: 8%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow:hidden;
+  }
+
+.botones {
+    text-align: center;
+    margin-right: 16%;
+}
+
+.menus{ 
+    padding: 16px 32px;
+    font-family: monospace;
+    color:black;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+}
