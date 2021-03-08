@@ -18,34 +18,34 @@ body{
 
 h1{
     margin: 0;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
     text-align: center;
     color:steelblue;
-    font-size: 50px; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
+    font-size: 3vw; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
     font-family: "Open Sans", sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */   
     text-shadow: 3px 3px 1px black;
 }
 
 img{
     float:left;
-    margin-top: -4.5%;
+    margin-top: -6%;
     margin-left: 8%;
-    width: 150px;
-    height: 150px;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
     overflow:hidden;
   }
 
 .botones {
     text-align: center;
-    margin-right: 16%;
+    margin-right: 18%;
 }
 
 .menus{ 
-    padding: 16px 32px;
+    padding: 1vw 2vw;
     font-family: monospace;
     color:black;
-    font-size: 16px;
+    font-size: 1vw;
     transition-duration: 0.4s;
     cursor: pointer; 
 }
