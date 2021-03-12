@@ -1,51 +1,184 @@
-html{
-   background-color:seashell;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*{
+    margin: 0;
 }
 
-body{
-    margin: 0;
+a{
+    text-decoration:none;
+}
+
+#inicio{
+    min-height: 1000px;
+    background-image: url(../img/fondo_inicio.jpg);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif; 
+    color:white;
+}
+
+#nombre-pagina{
+    position: absolute;
+    display: flex;
+    width: 600px;
+    left: 200px;
+    top: 400px;
+    text-align: center;
+    transition: 1s;
+}
+
+#nombre-principal{
+    font-size:100px;
+}
+
+#nombre-secundario{
+    position: relative;
+    font-size: 20px;
+    left:8%;
+}
+
+#logo-blanco{
+    height: 200px;
+    width: 200px;
+}
+
+#cita-contenedor{
+    width: 500px;
+    position: absolute;
+    left: 1200px;
+    top:430px;
+    background-color:rgb(220,20,60,0.8);
+    transition: 1.5s;
+}
+
+#cita{
+    font-size:30px;
+}
+
+.rrss{
+    position: absolute;
+    width: 70px;
+    height: 940px;
+    top: 50px;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+.rrss img{
+    position: relative;
+    top: 40px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+#share{
+    position: absolute;
+    top: 800px;
+}
+
+.rrss img:hover {
+    opacity: 0.7;
+}
+
+.menu-contenedor{
+    display: flex;
+    list-style:none;
     width:auto;
-    background-color:rgb(225, 243, 174);
-    border: 2.5px solid black;
+    height: 49px;
+    background: rgba(170, 170, 170, 0.63);
 }
 
-.cabecera{
-    overflow: hidden;
-    width: auto;
-    background-color:rgb(161, 201, 235);
-    border: 1.5px solid black;
+.menu-contenedor li{
+    color: white;
+    font-size: 30px;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-h1{
-    margin: 0;
-    padding-bottom: 2%;
+.menu-contenedor li:hover{
+    background: crimson;
+    transition: .5s;
+}
+
+#logo-negro{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 40px; 
+}
+
+#eventos{
+    min-height: 700px;
+    background-color:grey ;
+}
+
+#subtitulo-eventos{
+    font-size: 50px;
     text-align: center;
-    color:steelblue;
-    font-size: 3vw; /* px quiere decir 'píxeles': el tamaño de la fuente base es ahora de 10 píxeles de altura */
-    font-family: "Open Sans", sans-serif; /* Este debe ser el resto del resultado que obtuviste de Google fonts */   
-    text-shadow: 3px 3px 1px black;
+    color:white;
+    font-family: 'Raleway',sans-serif;
 }
 
-img{
-    float:left;
-    margin-top: -6%;
-    margin-left: 8%;
-    width: 10vw;
-    height: 10vw;
-    border-radius: 50%;
-    overflow:hidden;
-  }
+.eventos-iconos{
+    display: flex;
+    width: 1150px;
+    margin-left: 30px;
+}
 
-.botones {
+.columna{
+    width: 500px;
+    margin-right: 50px;
+}
+
+.columna img{
+    width: 350px;
+    height: 250px;
+}
+
+.texto{
+    position: relative;
+    background-color: rgba(220, 20, 60, 0.719);
+    width: 300px;
+    left:25px;
+    top: 150px;
+    font-size: 30px;
     text-align: center;
-    margin-right: 18%;
+    font-family: 'Raleway',sans-serif;
+    color: white;
 }
 
-.menus{ 
-    padding: 1vw 2vw;
-    font-family: monospace;
+.item:hover .texto{
+    transform : scale(1.1);
+    transition: .5s ease; 
+}
+
+#img-feria:hover {
+    opacity: 0.4;
+    transition: .5s ease;
+} 
+
+#contacto{
+    display: flex;
+    position: relative;
     color:black;
-    font-size: 1vw;
-    transition-duration: 0.4s;
-    cursor: pointer; 
+    align-items: center;
+    font-size: small;
+    padding-top:1%;
+    padding-bottom: 1%;
+    background-color: rgba(165, 16, 46, 0.6);
+    font-family: 'Poppins', sans-serif;
 }
+
+.copyright{
+    position: relative;
+    left:25%;
+}
+
+
+.email{
+    position: relative;
+    left:45%;
+    font-size: smaller;
+} 
