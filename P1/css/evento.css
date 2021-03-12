@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+    margin: 0;
+}
+
+a{
+    text-decoration:none;
+}
+
+html{
+
+}
+
+.evento{
+    min-height: 1000px;
+    background-image: url(../img/fondo_inicio.jpg);
+    background-size: cover;
+    font-family: 'Poppins', sans-serif; 
+    color:white;
+}
+
+.menu-contenedor{
+    display: flex;
+    list-style:none;
+    width:auto;
+    height: 49px;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+.menu-contenedor li{
+    color: white;
+    font-size: 30px;
+    margin-left: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#logo-negro{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 40px; 
+}
+
+.menu-contenedor li:hover{
+    background: crimson;
+    transition: .5s;
+}
+
+.rrss{
+    position: absolute;
+    width: 70px;
+    height: 950px;
+    top: 50px;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+.rrss img{
+    position: relative;
+    top: 40px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+#share{
+    position: absolute;
+    top: 800px;
+}
+
+.rrss img:hover {
+    opacity: 0.7;
+}
+
+.feria{
+    position: relative;
+    display: flex;
+    top: 300px;
+    left:75px;
+    width: 1000px;
+    height: 300px;
+    background-color:  rgba(165, 16, 46, 0.6);
+    transition: 1s;
+}
+
+#nombre-evento{
+    position: relative;
+    font-size:50px;
+    width: 1000px;
+
+}
+
+#organizador{
+    font-size: 30px;
+}
+
+.texto{
+    font-size: 20px;;
+}
+
+.imagenes{
+    position: relative;
+    left: 150px;
+    bottom: 250px;
+    height: 800px;
+}
+
+.imagenes img{
+    transition: 1s;
+}
+
+#img-feria{
+    width: 550px;
+    height: 400px; 
+    margin-bottom: 20px;
+}
+
+#img-ninas{
+    width: 550px;
+    height: 400px; 
+}
+
+#contacto{
+    display: flex;
+    position: relative;
+    top: 651px;
+    color:black;
+    align-items: center;
+    font-size: small;
+    padding-top:1%;
+    padding-bottom: 1%;
+    background-color: rgba(165, 16, 46, 0.6);
+    font-family: 'Poppins', sans-serif;
+}
+
+.copyright{
+    position: relative;
+    left:25%;
+}
+
+
+.email{
+    position: relative;
+    left:45%;
+    font-size: smaller;
+} 

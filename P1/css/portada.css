@@ -111,7 +111,7 @@ a{
 
 #eventos{
     min-height: 700px;
-    background-color:grey ;
+    background-color:rgba(128, 128, 128, 0.664) ;
 }
 
 #subtitulo-eventos{
@@ -122,9 +122,13 @@ a{
 }
 
 .eventos-iconos{
+    position: relative;
     display: flex;
+    left: 350px;
+    bottom: 60px;
     width: 1150px;
     margin-left: 30px;
+    transition: 1s;
 }
 
 .columna{
