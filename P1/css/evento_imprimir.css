@@ -11,14 +11,13 @@ a{
 #evento{
     width: 119em;
     min-height: 1000px;
-    background-image: url(../img/fondo_inicio.jpg);
     background-size:auto;
     font-family: 'Poppins', sans-serif;
-    color:white;
+    color:rgb(0, 0, 0);
 }
 
 #menu-contenedor{
-    display: flex;
+    display: none;
     list-style:none;
     width:auto;
     height: 49px;
@@ -34,11 +33,12 @@ a{
 }
 
 #logo-negro{
-    position: relative;
-    top: 10px;
-    right:20px;
-    width: 40px;
-    height: 40px; 
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 800px;
+    width: 150px;
+    height: 160px; 
 }
 
 #nombre{
@@ -53,6 +53,7 @@ a{
 }
 
 #rrss{
+    display: none;
     position: absolute;
     width: 70px;
     height: 950px;
@@ -88,7 +89,6 @@ a{
 }
 
 #info{
-    background-color:  rgba(165, 16, 46, 0.6); 
     width: 1000px;
     height: 500px;
 }
@@ -111,7 +111,7 @@ a{
     position: relative;
     left: 100px;
     bottom: 270px;
-    height: 850px;
+    height: 800px;
 }
 
 #imagenes img{
@@ -140,7 +140,6 @@ a{
     font-size: small;
     padding-top:1%;
     padding-bottom: 1%;
-    background-color: rgba(165, 16, 46, 0.6);
     font-family: 'Poppins', sans-serif;
 }
 
