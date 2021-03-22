@@ -1,31 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+/**************************PÁGINA COMPLETA***************************/
 *{
     margin: 0;
 }
 
 a{
     text-decoration:none;
-}
-
-#inicio{
-    width: 119em;
-    height: 100vh;
-    background-image: url(../img/fondo_inicio.jpg);
-    background-size:auto;
-    font-family: 'Poppins', sans-serif; 
     color:white;
 }
 
+/********************************************************************/
+/**************************Sección inicio***************************/
+
+#inicio{
+    width: 119em;
+    height: 1000px;
+    background-image: url(../img/fondo_inicio.jpg);
+    background-size:auto;
+    font-family: 'Poppins', sans-serif; 
+}
+
+/********************************RRSS*******************************/
+#rrss-contenedor{
+    height: 955px;
+    width: 70px;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+#rrss-contenedor img{
+    position: relative;
+    top: 350px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+#rrss-contenedor img:hover {
+    opacity: 0.7;
+}
+/********************************************************************/
+/*****************************Menú***********************************/
+#menu-contenedor{
+    display: flex;
+    list-style:none;
+    width:auto;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+#menu-contenedor li{
+    color: white;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#logo-negro{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    right:20px;
+    width: 40px;
+    height: 40px; 
+}
+
+#nombre{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size:25px;
+}
+
+#menu-contenedor li:hover{
+    background: crimson;
+    transition: .5s;
+}
+/********************************************************************/
+/*****************************Portada********************************/
+#portada{
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom:40em;
+    left:15em;
+}
+
 #nombre-pagina{
-    position: absolute;
     display: flex;
     width: 600px;
-    left: 4em;
-    top: 13em;
     text-align: center;
     transition: 1s;
+    color: white;
+    margin-right: 10em;
 }
 
 #nombre-principal{
@@ -45,76 +114,19 @@ a{
 
 #cita-contenedor{
     width: 500px;
-    position: absolute;
-    left: 70em;
-    top:430px;
     background-color:rgb(220,20,60,0.8);
     transition: 1.5s;
+    color:white;
 }
 
 #cita{
     font-size:30px;
 }
-
-#rrss{
-    position: absolute;
-    width: 70px;
-    height: 940px;
-    top: 50px;
-    background: rgba(170, 170, 170, 0.63);
-}
-
-#rrss img{
-    position: relative;
-    top: 350px;
-    left: 16px;
-    width: 40px;
-    height: 40px;
-}
-
-#rrss img:hover {
-    opacity: 0.7;
-}
-
-#menu-contenedor{
-    display: flex;
-    list-style:none;
-    width:auto;
-    height: 49px;
-    background: rgba(170, 170, 170, 0.63);
-}
-
-#menu-contenedor li{
-    color: white;
-    font-size: 30px;
-    margin-left: 200px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#menu-contenedor li:hover{
-    background: crimson;
-    transition: .5s;
-}
-
-#logo-negro{
-    position: relative;
-    top: 10px;
-    left: 15px;
-    width: 40px;
-    height: 40px; 
-}
-
-#nombre{
-    position: relative;
-    top:10px;
-    left: 25px;
-    font-size:25px;
-}
-
+/********************************************************************/
+/**************************Sección de eventos************************/
 #eventos{
-    width: 119em;
-    min-height: 700px;
+    width: 100%;
+    height: 1000px;
     background-color:rgba(128, 128, 128, 0.664) ;
 }
 
@@ -126,23 +138,10 @@ a{
 }
 
 #eventos-iconos{
-    position: relative;
-    display: flex;
-    left: 350px;
-    bottom: 40px;
-    width: 1150px;
-    margin-left: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
     transition: 1s;
-}
-
-.columna{
-    width: 500px;
-    margin-right: 50px;
-}
-
-.columna img{
-    width: 350px;
-    height: 250px;
 }
 
 .texto{
@@ -150,20 +149,17 @@ a{
     background-color: rgba(220, 20, 60, 0.719);
     margin-left: auto;
     margin-right: auto;
-    top: 40px;
+    margin-top: 1.5em;
+    margin-bottom: auto;
     width: 300px;
-    height: 100px;
     font-size: 30px;
     text-align: center;
     font-family: 'Raleway',sans-serif;
     color: white;
 }
 
-
 .item{
-    position: relative;
-    top: 40px;
-    display: flex;
+    margin-right: 10px;
     margin-bottom: 10px;
 }
 
@@ -239,28 +235,30 @@ a{
     opacity: 0.4;
     transition: .5s ease;
 } 
-
-#contacto{
-    width: 146.5em;
-    display: flex;
+/********************************************************************/
+/*****************************PIE************************************/
+#contacto-contenedor{
     position: relative;
+    width: 100%;
+    display: flex;
     color:black;
     align-items: center;
     font-size: small;
-    padding-top:1%;
-    padding-bottom: 1%;
     background-color: rgba(165, 16, 46, 0.6);
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-family: 'Poppins', sans-serif;
 }
 
 #copyright{
-    position: relative;
-    left:25%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 #email{
-    position: relative;
-    left:45%;
+    margin-left: auto;
+    margin-right: auto;
     font-size: smaller;
-} 
+}
+/********************************************************************/

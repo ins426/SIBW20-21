@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Inés Nieto Sánchez">
         <title>Agapea</title>
         <link href="../css/portada.css" rel="stylesheet" type="text/css">
     </head>
-
     <body>
+        <!---------------------Sección de inicio--------------------------------------------------------->
         <div id="inicio">
-            <h1 id="nombre-pagina">
-                <img id= "logo-blanco" src="../img/icono_blanco.png">
-                <div class="titulo">
-                    <p id="nombre-principal">Agapea</p>
-                    <p id="nombre-secundario">Ferias del libro</p>
-                </div>
-            </h1>
-            <div id="cita-contenedor">
-                <q id="cita">Cuanto menos se lee, más daño hace lo que se lee.</q>
-                <p id="autor">Miguel de Unamuno</p>
-            </div>
-            <nav id="rrss">
+            <!-------------------------Menú----------------------->
+            <ul id="menu-contenedor">
+                <img id= "logo-negro" src="../img/icono_negro.png">
+                <p id="nombre">Agapea</p>
+                <li> <a href='./portada.html#inicio' id="inicio-enlace">Inicio</a></li>
+                <li> <a href='./portada.html#eventos' id="eventos-enlace">Eventos</a></li>
+                <li> <a href='#contacto' id="contacto-enlace">Contacto</a></li>
+            </ul> 
+            <!------------------------------------------------------>
+            <!-------------------------RRSS-------------------------> 
+            <nav id="rrss-contenedor">
                 <a href="https://twitter.com/"><img id= "twitter" src="../img/twitter.png"></a> 
                 <a href="https://www.instagram.com/"><img id= "instagram" src="../img/instagram.png"></a>
                 <a href="https://es-es.facebook.com/"><img id= "facebook" src="../img/facebook.png"></a>
             </nav>
-            <nav id="menu-contenedor">
-                <img id= "logo-negro" src="../img/icono_negro.png">
-                <p id="nombre">Agapea</p>
-                <li> <a href='#inicio' id="inicio-enlace">Inicio</a></li>
-                <li> <a href='#eventos' id="eventos-enlace">Eventos</a></li>
-                <li> <a href='#contacto' id="contacto-enlace">Contacto</a></li>
-            </nav>
+            <!------------------------------------------------------>
+            <!-----------------------Portada------------------------>
+            <div id="portada">
+                <h1 id="nombre-pagina">
+                    <img id= "logo-blanco" src="../img/icono_blanco.png">
+                    <div class="titulo">
+                        <p id="nombre-principal">Agapea</p>
+                        <p id="nombre-secundario">Ferias del libro</p>
+                    </div>
+                </h1> 
+                <div id="cita-contenedor">
+                    <q id="cita">Cuanto menos se lee, más daño hace lo que se lee.</q>
+                    <p id="autor">Miguel de Unamuno</p>
+                </div> 
+            </div>
+            <!------------------------------------------------------>
         </div>
+        <!--------------------------------------------------------------------------------------------->
+        <!---------------------Sección de eventos------------------------------------------------------>
         <div id="eventos">
             <h2 id="subtitulo-eventos">Próximos eventos</h2>
             <div id="eventos-iconos">
-                <div class="columna">
-                    <a href="./evento.html" class="item" id="aragon">
-                        <div class = 'texto'>Feria Internacional del Libro (Madrid) 15 oct - 20 oct</div>
-                    </a>
-                    <a href="#" class="item" id="internacional">
-                        <div class = 'texto'>Feria del Libro Aragonés (Aragón) 21 mayo - 23 mayo</div>
-                    </a>
-                    <a href="#" class="item" id="antiguo">
-                        <div class = 'texto'>Feria del Libro Antiguo (Madrid) 28 sept - 13 oct</div>
-                    </a>
-                </div>
-                <div class="columna">
-                    <a href="#" class="item" id=libro-artesania>
-                        <div class = 'texto'>Feria del Libro y de la Artesanía (Sevilla) 12 mayo</div>
-                    </a>
-                    <a href="#" class="item" id="bermeo">
-                        <div class = 'texto'>Feria del Libro Antiguo (Córdoba) 9 oct - 15 oct</div>
-                    </a>
-                    <a href="#" class="item" id="granada">
-                        <div class = 'texto'>Feria del Libro (Granada) 1 octubre-10 octubre</div>
-                    </a>
-                </div>
-                <div class="columna">
-                    <a href="#" class="item" id="murcia">
-                        <div class = 'texto'>Feria del Libro de Caravaca de la Cruz (Murcia) 2 junio</div>
-                    </a>
-                    <a href="#" class="item" id="pontevedra">
-                        <div class = 'texto'>Salón del Libro Infantil (Pontevedra) 26 abril - 1 mayo</div>
-                    </a>
-                    <a href="#" class="item" id="leon">
-                        <div class = 'texto'>Feria del Libro La Bañeza (León) 4 julio - 7 julio</div>
-                    </a>
-                </div>
+                <a href="./evento.html" class="item" id="aragon">
+                    <div class = 'texto'>Feria Internacional del Libro (Madrid) 15 oct - 20 oct</div>
+                </a>
+                <a href="#" class="item" id="internacional">
+                    <div class = 'texto'>Feria del Libro Aragonés (Aragón) 21 mayo - 23 mayo</div>
+                </a>
+                <a href="#" class="item" id="antiguo">
+                    <div class = 'texto'>Feria del Libro Antiguo (Madrid) 28 sept - 13 oct</div>
+                </a>
+                <a href="#" class="item" id=libro-artesania>
+                    <div class = 'texto'>Feria del Libro y de la Artesanía (Sevilla) 12 mayo</div>
+                </a>
+                <a href="#" class="item" id="bermeo">
+                    <div class = 'texto'>Feria del Libro Antiguo (Córdoba) 9 oct - 15 oct</div>
+                </a>
+                <a href="#" class="item" id="granada">
+                    <div class = 'texto'>Feria del Libro (Granada) 1 octubre-10 octubre</div>
+                </a>
+                <a href="#" class="item" id="murcia">
+                    <div class = 'texto'>Feria del Libro de Caravaca de la Cruz (Murcia) 2 junio</div>
+                </a>
+                <a href="#" class="item" id="pontevedra">
+                    <div class = 'texto'>Salón del Libro Infantil (Pontevedra) 26 abril - 1 mayo</div>
+                </a>
+                <a href="#" class="item" id="leon">
+                    <div class = 'texto'>Feria del Libro La Bañeza (León) 4 julio - 7 julio</div>
+                </a>
             </div>
-            </div> 
         </div>
-        <footer id="contacto">
+        <!--------------------------------------------------------------------------------------------->  
+        <footer id="contacto-contenedor">
             <div id="copyright">
                 Copyright Inés Nieto Sánchez 2021
             </div>
             <div id="email">
                 Email: ins26@correo.ugr.es
+            </div>
         </footer>
     </body>
 </html> 
