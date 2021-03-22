@@ -124,6 +124,11 @@ a{
     width: 1000px;
     height: 500px;
     background-color:  rgba(165, 16, 46, 0.6); 
+    color: white;
+}
+
+#info a{
+    color:paleturquoise;
 }
 
 #nombre-evento{
