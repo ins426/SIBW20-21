@@ -122,7 +122,9 @@ a{
 
 #info{
     width: 1000px;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     background-color:  rgba(165, 16, 46, 0.6); 
     color: white;
 }
@@ -164,23 +166,71 @@ a{
     bottom:1em;
 }
 /********************************************************************/
+
+/**************************PRÁCTICA 2********************************/
 /*************************Comentarios********************************/
 #comentarios{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
     top: 0;
     right: 0;
-    background-color: rgb(255, 2, 2);
-    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.678);
     transition: 0.5s;
-    padding-top: 60px;
+    color: white;
+    overflow: scroll;
 }
 
-#barra{
+#icono-comentarios{
     position: absolute;
-    right: 0;
+    right: 1em;
     top: 0;
+}
+
+#cabecera-comentarios{
+    display: flex;
+    align-items: center;
+}
+
+ #titulo-comentarios{
+    margin-right: auto;
+    margin-left: auto;
 } 
+
+#cerrar{
+    position: relative;
+    font-size: 36px;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin-left: 3em;
+    margin-top: auto;
+}
+
+#comentarios-enviados{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1em;
+    font-size: small;
+}
+
+.c{
+    margin-bottom: 1em;
+    color: white;
+    background-color: rgba(220, 20, 60, 0.692);
+    display: flex;
+}
+
+#user{
+    width:80px;
+    height: 80px;
+}
+
+#mensaje{
+    margin-left: 2em;
+}
 /********************************************************************/

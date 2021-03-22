@@ -5,7 +5,7 @@
         <meta name="author" content="Inés Nieto Sánchez">
         <title>Agapea</title>
         <link href="../css/evento.css" rel="stylesheet" type="text/css">
-        <script src="../javascript/javascript.js" defer></script>
+        <script src="../js/javascript.js" defer></script>
     </head>
     <body>
         <div id="evento">
@@ -59,6 +59,7 @@
                     </div> 
                 </div> 
             </article> 
+             <!-------------------------PIE----------------------->
             <footer id="contacto-contenedor">
                 <div id="copyright">
                     Copyright Inés Nieto Sánchez 2021
@@ -69,14 +70,43 @@
             </footer>
             <!------------------------------------------------------>
             <!-----------------Comentarios-------------------------->
-            <!-- <div id="comentarios">
-                <a href="javascript:void(0)" onclick="cerrarComentarios()">&times;</a>
-                asdfd
+            <div id="comentarios">
+                <div id=cabecera-comentarios>
+                    <a href="javascript:void(0)" id="cerrar">&times;</a>
+                    <h2 id="titulo-comentarios">Comentarios</h2>
+                </div>
+                <div id="comentarios-enviados">
+                    <div class="c">
+                            <img id= "user" src="../img/user.png">
+                            <div id='mensaje'>
+                                <h3>Agapito, agapitosemail@gmail.com <br>22/03/2021 21:21</h3>
+                                <p>Etiam consectetur congue feugiat. Duis auctor quis leo a sagittis. 
+                                    Maecenas sit amet erat maximus, accumsan purus at, vehicula nibh. Aenean sed ullamcorper tellus. 
+                                    Praesent aliquet, nulla non varius vehicula, nibh leo placerat metus, sed elementum purus nisi vel magna.
+                                    Vivamus in turpis ac magna tristique hendrerit.</p>
+                            </div>
+                    </div>
+                    <div class="c">
+                            <img id= "user" src="../img/user.png">
+                            <div id='mensaje'>
+                                <h3>Agapita, agapitasemail@gmail.com <br>22/03/2021 11:11</h3>
+                                <p>Aliquam risus sapien, posuere semper tincidunt sit amet, aliquam et nulla. Aenean tortor ex, condimentum non sodales ut, tempor ac arcu. 
+                                    Vivamus elementum dolor quis felis vulputate suscipit. Suspendisse diam sapien, ornare sit amet pretium at, facilisis eget diam.</p>
+                            </div>
+                    </div>
+                </div>
+                <form id="formulario">
+                    <label for="fname">Nombre</label><br>
+                    <input type="text" id="usuario"><br>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="mail"><br>
+                    <label>Comentario</label><br>
+                    <textarea id="comentario"></textarea><br> 
+                    <input type="button" value="Enviar" id="enviar">
+                </form>
             </div>
-            <span id="barra" style="font-size: 30px;cursor:pointer" onclick="abrirComentarios()">&#9776;open</span> -->
+            <span id="icono-comentarios" style="font-size: 30px;cursor:pointer">&#128488;</span> 
             <!------------------------------------------------------>
-            <!-------------------------PIE----------------------->
-            <!-------------------------***----------------------->
         </div>
 
     </body>
