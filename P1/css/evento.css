@@ -22,7 +22,7 @@ a{
 /*****************************PIE************************************/
 #contacto-contenedor{
     position: relative;
-    bottom: 65.5em;
+    top:0.3em;
     width: 100%;
     display: flex;
     color:black;
@@ -48,23 +48,23 @@ a{
 /********************************************************************/
 /*****************************RRSS***********************************/
 #rrss-contenedor{
-    height: 95.5%;
     width: 70px;
     background: rgba(170, 170, 170, 0.63);
+    height: 950px;
+}
+
+#rrss-imagenes{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top:20em;
 }
 
 #rrss-contenedor img{
-    position: relative;
-    top: 40px;
-    left: 16px;
     width: 40px;
     height: 40px;
 }
-
-#rrss-contenedor #imprimir{
-    position: relative;
-    top: 70%;
-} 
 
 #rrss-contenedor img:hover {
     opacity: 0.7;
@@ -111,11 +111,10 @@ a{
 /*****************************Evento*********************************/
 #feria{
     display: flex;
-    position: relative;
+    position: absolute;
     left:5em;
-    bottom:55em;
+    bottom:1em;
     width: 95%;
-    height: 85%;
     align-items: center;
     transition: 1s;
 }
@@ -218,7 +217,7 @@ a{
     font-size: small;
 }
 
-.c{
+.mensaje-contenedor{
     margin-bottom: 1em;
     color: white;
     background-color: rgba(220, 20, 60, 0.692);

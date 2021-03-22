@@ -86,10 +86,10 @@ a{
 /********************************************************************/
 /*****************************Portada********************************/
 #portada{
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
-    bottom:25em;
+    bottom:35em;
     margin-left: 10em;
 }
 
@@ -118,6 +118,7 @@ a{
     display: flex;
     text-decoration: none;
     justify-content: start;
+    width: 30em;
     background-color:rgb(220,20,60,0.8);
     transition: 1.5s;
     color:white;
@@ -130,9 +131,10 @@ a{
 /********************************************************************/
 /**************************Sección de eventos************************/
 #eventos{
-    width: 100%;
+    width: 119em;
     height: 1000px;
     background-color:rgba(128, 128, 128, 0.664) ;
+    overflow: hidden;
 }
 
 #subtitulo-eventos{

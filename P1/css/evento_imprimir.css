@@ -9,19 +9,20 @@
 #evento{
     width: 119em;
     height: 1000px;
+    background-size:auto;
     font-family: 'Poppins', sans-serif;
 }
 
 a{
     text-decoration:none;
-    color:black;
+    color:white;
 }
 /********************************************************************/
 /*****************************PIE************************************/
 #contacto-contenedor{
     display: none;
     position: relative;
-    bottom: 65.5em;
+    top:0.3em;
     width: 100%;
     color:black;
     align-items: center;
@@ -47,23 +48,23 @@ a{
 /*****************************RRSS***********************************/
 #rrss-contenedor{
     display: none;
-    height: 95.5%;
     width: 70px;
     background: rgba(170, 170, 170, 0.63);
+    height: 950px;
+}
+
+#rrss-imagenes{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top:20em;
 }
 
 #rrss-contenedor img{
-    position: relative;
-    top: 40px;
-    left: 16px;
     width: 40px;
     height: 40px;
 }
-
-#rrss-contenedor #imprimir{
-    position: relative;
-    top: 70%;
-} 
 
 #rrss-contenedor img:hover {
     opacity: 0.7;
@@ -109,17 +110,24 @@ a{
 /*****************************Evento*********************************/
 #feria{
     display: flex;
-    position: relative;
+    position: absolute;
     left:5em;
+    bottom:1em;
     width: 95%;
-    height: 85%;
     align-items: center;
     transition: 1s;
 }
 
 #info{
     width: 1000px;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: black;
+}
+
+#info a{
+    color:rgb(0, 0, 0);
 }
 
 #nombre-evento{
@@ -155,180 +163,4 @@ a{
     bottom:1em;
 }
 /********************************************************************/
-/*************************Comentarios********************************/
-#comentarios{
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgb(255, 2, 2);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-#barra{
-    position: absolute;
-    right: 0;
-    top: 0;
-} 
 /********************************************************************/
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-*{
-    margin: 0;
-}
-
-a{
-    text-decoration:none;
-}
-
-#evento{
-    width: 119em;
-    min-height: 1000px;
-    background-size:auto;
-    font-family: 'Poppins', sans-serif;
-    color:rgb(0, 0, 0);
-}
-
-#menu-contenedor{
-    display: none;
-    list-style:none;
-    width:auto;
-    height: 49px;
-    background: rgba(170, 170, 170, 0.63);
-}
-
-#menu-contenedor li{
-    color: white;
-    font-size: 30px;
-    margin-left: 200px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-#logo-negro{
-    display: block;
-    position: absolute;
-    top: 50px;
-    left: 800px;
-    width: 150px;
-    height: 160px; 
-}
-
-#nombre{
-    position: relative;
-    top:10px;
-    font-size:25px;
-}
-
-#menu-contenedor li:hover{
-    background: crimson;
-}
-
-#rrss-contenedor{
-    display: none;
-    position: absolute;
-    width: 70px;
-    height: 950px;
-    top: 50px;
-    background: rgba(170, 170, 170, 0.63);
-}
-
-#rrss-contenedor img{
-    position: relative;
-    top: 40px;
-    left: 16px;
-    width: 40px;
-    height: 40px;
-}
-
-#rrss-contenedor #imprimir{
-    position: absolute;
-    top: 800px;
-}
-
-#rrss-contenedor img:hover {
-    opacity: 0.7;
-}
-
-#feria{
-    position: relative;
-    display: flex;
-    top: 300px;
-    height: 650px;
-    left:75px;
-    width: 1810px;  
-}
-
-#info{
-    width: 1000px;
-    height: 500px;
-}
-
-#nombre-evento{
-    position: relative;
-    font-size:50px;
-    width: 1000px;
-}
-
-#organizador{
-    font-size: 30px;
-}
-
-#texto{
-    font-size: 20px;;
-}
-
-#imagenes{
-    position: relative;
-    left: 100px;
-    bottom: 270px;
-    height: 800px;
-}
-
-#img-feria{
-    width: 550px;
-    height: 400px; 
-    margin-bottom: 20px;
-}
-
-#img-ninas{
-    width: 550px;
-    height: 400px; 
-}
-
-#contacto-contenedor{
-    width: 140.5em;
-    display: flex;
-    position: relative;
-    top: 240px;
-    left: 75px;
-    color:black;
-    align-items: center;
-    font-size: small;
-    padding-top:1%;
-    padding-bottom: 1%;
-    font-family: 'Poppins', sans-serif;
-}
-
-#copyright{
-    position: relative;
-    left:25%;
-}
-
-
-#email{
-    position: relative;
-    left:45%;
-    font-size: smaller;
-} 
-
-.pie{
-    background-color: rgba(119, 119, 119, 0.788);
-    text-align: center;
-    position: relative;
-    bottom:40px;
-} */

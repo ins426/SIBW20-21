@@ -30,12 +30,12 @@ function aniadirComentario(){
             m = fecha.getMonth()+1;
             //Día
             d = fecha.getDate();
-
             //Hora
             h = fecha.getHours();
+            //Minutos
             min = fecha.getMinutes();
         
-            var html = "<div class='c'><img id= 'user' src='../img/user.png'><div id='mensaje'><h3>"+nom+", "+ em + "<br>" +d + "/" + m + "/" + y+ " "+ h + ":"+ min+"</h3><p>"+coment+"</p></div></div>";
+            var html = "<div class='mensaje-contenedor'><img id= 'user' src='../img/user.png'><div id='mensaje'><h3>"+nom+", "+ em + "<br>" +d + "/" + m + "/" + y+ " "+ h + ":"+ min+"</h3><p>"+coment+"</p></div></div>";
             document.getElementById("comentarios-enviados").innerHTML += html;
         
             document.getElementById("formulario").reset();
