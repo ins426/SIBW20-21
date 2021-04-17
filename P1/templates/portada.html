@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/portada.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+    {% block central %}
+        <!------------------------------------------------------>
+        <!-----------------------Portada------------------------>
+        <div id="portada">
+            <h1 id="nombre-pagina">
+            <img id= "logo-blanco" src="../img/icono_blanco.png">
+            <div class="titulo">
+                <p id="nombre-principal">Agapea</p>
+                <p id="nombre-secundario">Ferias del libro</p>
+            </div>
+            </h1> 
+            <div id="cita-contenedor">
+                <p id="cita">"Cuanto menos se lee, más daño hace lo que se lee."<br><id=autor>Miguel de Unamuno</id></p>
+            </div>  
+        </div> 
+        <!------------------------------------------------------>
+        </div>
+        <!--------------------------------------------------------------------------------------------->
+        <!---------------------Sección de eventos------------------------------------------------------>
+        <div id="eventos">
+            <h2 id="subtitulo-eventos">Próximos eventos</h2>
+            <div id="eventos-iconos">
+            {% for evento in eventos %}
+                <a href="./evento.html"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
+                    <div class = 'texto'>{{evento['nombre']}}, {{evento['fechainicio']}} al {{evento['fechafin']}}</div>
+                </a>
+            {% endfor %}
+            </div>
+        </div> 
+    {% endblock %}

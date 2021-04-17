@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+    {% block css %}  
+        <link href="./css/evento_imprimir.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+    {% block logo %}
+    <img id= "logo-negro" src="../img/icono_negro.png">
+    {% endblock %}
+    {% block central %}
+    <!------------------------------------------------------>
+    <!-------------------------Evento---------------------->
+        <article id="feria">
+            <div id="info">
+                <h1 id="nombre-evento">{{evento['nombre']}}</h1>
+                <h2 id="organizador">Organizada por {{evento['organizador']}}</h2>
+                <h3 id="fecha">{{evento['fechainicio']}} al {{evento['fechafin']}}, de {{evento['horainicio']}} a {{evento['horafin']}}</h3>
+                <p id="texto">{{evento['descripcion']}}</p>
+            </div>
+            <div id="imagenes">
+                {% for imagen in imagenes %}
+                    <img id= "img-feria" src="../img/{{imagen['nombre']}}">
+                    <p class="pie">{{imagen['pie']}}</p>
+                {% endfor %}
+            </div> 
+        </article>  
+    {% endblock %}

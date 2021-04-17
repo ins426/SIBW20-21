@@ -14,7 +14,7 @@ a{
 /********************************************************************/
 /**************************Sección inicio***************************/
 
-#inicio{
+#pag-contenedor{
     width: 119em;
     height: 1000px;
     background-image: url(../img/fondo_inicio.jpg);
@@ -170,67 +170,10 @@ a{
     margin-bottom: 10px;
 }
 
-#aragon{
+#icono{
     width: 25em;
     height: 15em;
-    background-image:url(../img/aragon.jpg);
     background-size: cover;
-}
-
-#antiguo{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/libro_antiguo.jpg);
-    background-size: cover;
-}
-
-#internacional{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/internacional.jpg);
-    background-size: cover;
-}
-
-#libro-artesania{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/libro_artesania.jpg);
-    background-size: cover;
-}
-
-#bermeo{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/bermeo.jpg);
-    background-size: cover;
-}
-
-#granada{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/granada.jpg);
-    background-size: cover;
-}
-
-#murcia{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/murcia.jpg);
-    background-size: cover;
-}
-
-#pontevedra{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/pontevedra.jpeg);
-    background-size: cover;
-}
-
-#leon{
-    width: 25em;
-    height: 15em;
-    background-image:url(../img/leon.jpg);
-    background-size: cover;  
 }
 
 .item:hover .texto{

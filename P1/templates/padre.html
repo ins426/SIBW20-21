@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Inés Nieto Sánchez">
+        <title>Agapea</title>
+        {% block css %}
+
+        {% endblock %}
+    </head>
+    <body>
+        <!---------------------Sección de inicio--------------------------------------------------------->
+        <div id="pag-contenedor">
+            <!-------------------------Menú----------------------->
+            {% block logo %}
+
+            {% endblock %}
+            <ul id="menu-contenedor">
+                <img id= "logo-negro" src="../img/icono_negro.png">
+                <p id="nombre">Agapea</p>
+                <li> <a href='./portada.html#inicio' id="inicio-enlace">Inicio</a></li>
+                <li> <a href='./portada.html#eventos' id="eventos-enlace">Eventos</a></li>
+                <li> <a href='#contacto' id="contacto-enlace">Contacto</a></li>
+            </ul>  
+            <!------------------------------------------------------>
+            <!-------------------------RRSS-------------------------> 
+            <nav id="rrss-contenedor">
+                <div id="rrss-imagenes">
+                    {%block rrss %}
+                    <a href="https://twitter.com/"><img id= "twitter" src="../img/twitter.png"></a> 
+                    <a href="https://www.instagram.com/"><img id= "instagram" src="../img/instagram.png"></a>
+                    <a href="https://es-es.facebook.com/"><img id= "facebook" src="../img/facebook.png"></a>
+                    {% endblock %}
+                </div>
+            </nav> 
+
+            {% block central %}
+
+            {% endblock %}
+        <!--------------------------------------------------------------------------------------------->  
+            <footer id="contacto-contenedor">
+                <div id="copyright">
+                    Copyright Inés Nieto Sánchez 2021
+                </div>
+                <div id="email">
+                    Email: ins26@correo.ugr.es
+                </div>
+            </footer>
+        </div>
+    </body>
+</html> 
