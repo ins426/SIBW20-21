@@ -25,6 +25,15 @@
         </div> 
     </article>  
     <!------------------------------------------------------>
+    <!-------------------------Galería----------------------->
+    <div id='galeria-contenedor'>
+        {%for fotografia in galeria %}
+            <div id=id-img>
+                <img src="../img/{{fotografia['nombre']}}">
+            </div>
+        {%endfor%}
+    </div>
+    <!------------------------------------------------------>
     <!-----------------Comentarios-------------------------->
     <div id="comentarios">
         <div id=cabecera-comentarios>

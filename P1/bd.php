@@ -94,6 +94,47 @@ class BD{
 
         return $imagenes;
     }
+    /***********************************************************************************************/
+    function getImagenesGaleria(){
+
+        if(isset($_GET['ev'])){
+            $idEv = $_GET['ev'];
+
+            if(is_numeric($idEv)){
+                try{
+                    $q = "SELECT * FROM Imagenes WHERE id_ev =? AND pie IS NULL";
+                    $statement = $this->$mysqli->prepare($q);
+
+                    $statement->bind_param('i',$idEv);
+                    $statement->execute();
+
+                    $res = $statement->get_result();
+
+                    $i = 0;
+                    if($res->num_rows > 0){
+                        while($row = $res->fetch_assoc()){
+                            $imagenes[$i]= array('nombre'=> $row['nombre'],'id_ev'=>$row['id_ev'],'pie'=>$row['pie']);
+                            $i++;
+                        }
+                    }
+                    else{
+                        //??
+                    }
+                }
+                catch(Exception $e){
+                    error_log($e);
+                    exit("Error");
+                }   
+            }
+            else{
+                //?
+            }
+        }else{
+           //?
+        }
+
+        return $imagenes;
+    }
 /***********************************************************************************************/
     function getEventos(){
 

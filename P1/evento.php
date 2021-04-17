@@ -10,6 +10,7 @@
     $evento = $conexion->getEvento();
     $imagenes = $conexion->getImagenesEvento();
     $comentarios = $conexion->getComentariosEvento();
+    $galeria = $conexion->getImagenesGaleria();
 
-    echo $Twig->render('evento.html',['evento' => $evento, 'imagenes' => $imagenes,'comentarios' => $comentarios]);
+    echo $Twig->render('evento.html',['evento' => $evento, 'imagenes' => $imagenes,'comentarios' => $comentarios,'galeria'=>$galeria]);
 ?>

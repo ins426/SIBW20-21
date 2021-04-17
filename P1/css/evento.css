@@ -22,7 +22,6 @@ a{
 /*****************************PIE************************************/
 #contacto-contenedor{
     position: relative;
-    top:0.3em;
     width: 100%;
     display: flex;
     color:black;
@@ -232,4 +231,18 @@ a{
 #mensaje{
     margin-left: 2em;
 }
-/********************************************************************/
+
+/**************************PRÁCTICA 3********************************/
+/*************************Galería********************************/
+#galeria-contenedor{
+    display: flex;
+    justify-content: center;
+    background-color:rgba(128, 128, 128, 0.664) ;
+}
+
+#id-img img{
+   width: 400px;
+   height: 300px;
+   margin-top: 1em;
+   padding-left: 1em;
+}
