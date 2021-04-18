@@ -28,7 +28,7 @@ class BD{
                     if($res->num_rows > 0){
                         $row = $res->fetch_assoc();
         
-                        $evento = array('nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
+                        $evento = array('id'=>$row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
                         'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
                     
                     }
@@ -149,7 +149,7 @@ class BD{
             $i = 1;
 
             while($row = $res->fetch_assoc() ){
-                $eventos[$i-1] = array('nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
+                $eventos[$i-1] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
                 'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
                 $i = $i+1;
                     

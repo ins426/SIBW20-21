@@ -25,7 +25,7 @@
             <h2 id="subtitulo-eventos">Próximos eventos</h2>
             <div id="eventos-iconos">
             {% for evento in eventos %}
-                <a href="./evento.html"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
+                <a href="./evento.php?ev={{evento['id']}}"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
                     <div class = 'texto'>{{evento['nombre']}}, {{evento['fechainicio']}} al {{evento['fechafin']}}</div>
                 </a>
             {% endfor %}
