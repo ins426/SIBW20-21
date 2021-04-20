@@ -33,7 +33,7 @@ class BD{
                     
                     }
                     else{
-                        $evento = array('nombre' => 'XXX', 'organizador' => 'XXX','horainicio'=> 'X','horafin'=>'X','descripcion' => 'X',
+                        $evento = array('nombre' => 'XXX', 'organizador' => 'XXX','horainicio'=> 'X','horafin'=>'X','descripcion' => 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
                         'fechainicio' => 'X', 'fechafin'=>'X'); 
                     }
                 }
@@ -77,7 +77,7 @@ class BD{
                         }
                     }
                     else{
-                        //??
+                        $imagenes[0]= array('nombre'=> 'internacional.jpg','id_ev'=>'1','pie'=>NULL);
                     }
                 }
                 catch(Exception $e){
@@ -86,10 +86,11 @@ class BD{
                 }   
             }
             else{
-                //?
+                http_response_code(500);
+                die("Error estableciendo conexión con la BD");
             }
         }else{
-           //?
+            $imagenes[0]= array('nombre'=> 'internacional.jpg','id_ev'=>'1','pie'=>NULL);
         }
 
         return $imagenes;
@@ -118,7 +119,7 @@ class BD{
                         }
                     }
                     else{
-                        //??
+                        $imagenes[0]= array('nombre'=> 'internacional.jpg','id_ev'=>'1','pie'=>NULL);
                     }
                 }
                 catch(Exception $e){
@@ -127,10 +128,11 @@ class BD{
                 }   
             }
             else{
-                //?
+                http_response_code(500);
+                die("Error estableciendo conexión con la BD");
             }
         }else{
-           //?
+            $imagenes[0]= array('nombre'=> 'internacional.jpg','id_ev'=>'1','pie'=>NULL);
         }
 
         return $imagenes;
