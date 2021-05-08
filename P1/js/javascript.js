@@ -52,11 +52,16 @@ function validarEmail(valor) {
   }
 
 /********************************************************************/
-function reemplazarPalabrasFeas(event){
-    event.preventDefault();
+function reemplazarPalabrasFeas(palabras){
+
     var comentario = document.getElementById("comentario");
-    var palabrasFeas = ['imbecil','bocachancla','chupacables','gorrino','parguelas','tolai',
-'cabezabuque','pagafantas','desgraciao','estupido'];
+    var palabrasFeas = []
+    try{
+        palabrasFeas = JSON.parse(palabras);
+    }catch(e){
+        console.log(e);
+    }
+        
     var censurado = censura(comentario.value,palabrasFeas);
     comentario.value = censurado;
 }

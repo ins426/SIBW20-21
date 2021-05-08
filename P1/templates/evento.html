@@ -5,7 +5,7 @@
     {% endblock %}
     {%block rrss %}
         {{ parent() }}
-        <a href="./evento_imprimir.html"><img id= "imprimir" src="../img/imprimir.png"></a>
+        <a href="./evento_imprimir.php?ev={{evento['id']}}"><img id= "imprimir" src="../img/imprimir.png"></a>
     {% endblock %}
     {% block central %}
     <!------------------------------------------------------>
@@ -57,7 +57,7 @@
                 <label for="email">E-mail</label><br>
                 <input type="email" id="mail"><br>
                 <label>Comentario</label><br>
-                <textarea id="comentario"></textarea><br> 
+                <textarea id="comentario" oninput="reemplazarPalabrasFeas('{{palabras|json_encode}}')"></textarea><br> 
                 <input type="button" value="Enviar" id="enviar">
         </form>
     </div>

@@ -112,7 +112,7 @@ a{
     display: flex;
     position: absolute;
     left:5em;
-    bottom:1em;
+    bottom:4em;
     width: 95%;
     align-items: center;
     transition: 1s;

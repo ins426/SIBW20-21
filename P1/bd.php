@@ -201,11 +201,25 @@ class BD{
                 exit("Error");
             }
 
-        }else{
-            //?
         } 
 
         return $comentarios;
+    }
+/***********************************************************************************************/
+    function getPalabrasProhibidas(){
+        $q = "SELECT * FROM PalabrasProhibidas";
+        $res = $this->$mysqli->query($q);
+
+        $i = 0;
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $palabras[$i] = array($row['palabra']);
+                $i++;
+            }
+        }
+
+        return $palabras;
+
     }
 /***********************************************************************************************/
 }
