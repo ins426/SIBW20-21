@@ -212,3 +212,46 @@ a{
     font-size: smaller;
 }
 /********************************************************************/
+#accion{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 10px;
+    font-size: 15px;
+}
+
+#iniciar-sesion{
+    position: relative;
+    color:black;
+    right: 10px;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#registrarse{
+    color:black;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#cerrar-sesion{
+    color:black;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#perfil{
+    position: relative;
+    color:black;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;  
+    right:10px;
+}

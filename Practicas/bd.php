@@ -1,15 +1,15 @@
 <?php
 class BD{
     private static $mysqli;
-/***********************************************************************************************/
-    public function __construct() {
-        $this->$mysqli = new mysqli("localhost","ins","123","SIBW");
 
-        if($this->$mysqli->connect_errno){
-            echo("Fallo al conectar: " . $this->$mysqli->connect_error);
+    public function __construct() {
+        $this->mysqli = new mysqli("localhost","ins","123","SIBW");
+
+        if($this->mysqli->connect_errno){
+            echo("Fallo al conectar: " . $this->mysqli->connect_error);
         }
     }
-/***********************************************************************************************/
+
     function getEvento(){ 
 
         if(isset($_GET['ev'])){
@@ -18,7 +18,7 @@ class BD{
             if(is_numeric($idEv)){
                 try{
                     $q = "SELECT * FROM Eventos WHERE id = ?";
-                    $statement = $this->$mysqli->prepare($q);
+                    $statement = $this->mysqli->prepare($q);
 
                     $statement->bind_param('i',$idEv);
                     $statement->execute();
@@ -53,7 +53,7 @@ class BD{
         }
         return $evento;
     }
-/***********************************************************************************************/
+
     function getImagenesEvento(){
 
         if(isset($_GET['ev'])){
@@ -62,7 +62,7 @@ class BD{
             if(is_numeric($idEv)){
                 try{
                     $q = "SELECT * FROM Imagenes WHERE id_ev =? AND pie IS NOT NULL";
-                    $statement = $this->$mysqli->prepare($q);
+                    $statement = $this->mysqli->prepare($q);
 
                     $statement->bind_param('i',$idEv);
                     $statement->execute();
@@ -95,7 +95,7 @@ class BD{
 
         return $imagenes;
     }
-    /***********************************************************************************************/
+
     function getImagenesGaleria(){
 
         if(isset($_GET['ev'])){
@@ -104,7 +104,7 @@ class BD{
             if(is_numeric($idEv)){
                 try{
                     $q = "SELECT * FROM Imagenes WHERE id_ev =? AND pie IS NULL";
-                    $statement = $this->$mysqli->prepare($q);
+                    $statement = $this->mysqli->prepare($q);
 
                     $statement->bind_param('i',$idEv);
                     $statement->execute();
@@ -137,12 +137,12 @@ class BD{
 
         return $imagenes;
     }
-/***********************************************************************************************/
+
     function getEventos(){
 
         try{
             $q = "SELECT * FROM Eventos";
-            $statement = $this->$mysqli->prepare($q);
+            $statement = $this->mysqli->prepare($q);
 
             $statement->execute();
 
@@ -155,7 +155,7 @@ class BD{
                 'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
                 $i = $i+1;
                     
-                $statement = $this->$mysqli->prepare("SELECT * FROM Eventos WHERE id =?");
+                $statement = $this->mysqli->prepare("SELECT * FROM Eventos WHERE id =?");
 
                 $statement->bind_param('i',$i);
                 $statement->execute();
@@ -172,7 +172,7 @@ class BD{
 
         return $eventos;
     }
-/***********************************************************************************************/
+
     function getComentariosEvento(){
 
         if(isset($_GET['ev'])){
@@ -180,7 +180,7 @@ class BD{
 
             try{
                 $q = "SELECT * FROM Comentarios WHERE id_ev = ?";
-                $statement = $this->$mysqli->prepare($q);
+                $statement = $this->mysqli->prepare($q);
 
                 $statement->bind_param('i',$idEv);
                 $statement->execute();
@@ -205,10 +205,10 @@ class BD{
 
         return $comentarios;
     }
-/***********************************************************************************************/
+
     function getPalabrasProhibidas(){
         $q = "SELECT * FROM PalabrasProhibidas";
-        $res = $this->$mysqli->query($q);
+        $res = $this->mysqli->query($q);
 
         $i = 0;
         if($res->num_rows > 0){
@@ -221,7 +221,41 @@ class BD{
         return $palabras;
 
     }
-/***********************************************************************************************/
+
+    function checkLogin($nick,$pass){
+        $q = "SELECT * FROM Usuarios";
+        $res = $this->mysqli->query($q);
+
+        while($row = $res->fetch_assoc()){
+            if($nick == $row['nick']){
+                if(password_verify($pass,$row['pass'])){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    function registrarUsuario($nick,$pass){
+        $q = "SELECT * FROM Usuarios WHERE nick='".$nick."'";
+        $res = $this->mysqli->query($q);
+
+        if($res->$num_rows > 0){
+            return false;
+        }
+        else{
+            $password = password_hash($pass,$PASSWORD_DEFAULT);
+            $moderador = "false";
+            $gestor = "false";
+            $super = "false";
+
+            $inserta = "INSERT INTO Usuarios (nick,pass,super,moderador,gestor) VALUES('".$nick."', '".$password."',".$super.",".$moderador.",".$gestor.")";
+            $res = $this->mysqli->query($inserta);
+            echo $super;
+            return true;
+        }
+        
+    }
 }
 
 ?>

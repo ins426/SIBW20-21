@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Inés Nieto Sánchez">
+        {% block css %}
+
+        {% endblock %}
+        <title>Agapea</title>
+    </head>
+    <body>
+        <div id ="titulo-contenedor">
+            <img id= "logo-blanco" src="../img/icono_blanco.png">
+            <h1 id="titulo">Agapea</h1>
+        </div>
+        <div id="iniciar-sesion-contenedor">
+            <div id="sesion-contenedor">
+                <img id= "user" src="../img/user.png">
+                <h2 id=iniciar-sesion>{% block accion %}{% endblock %}</h2>
+                <form action={% block archivo_accion %}{% endblock %} method="post" id="login">
+                    <input type="text" name="nick"  placeholder="Usuario"/><br>
+                    <input type="password" name="pass" placeholder="Contraseña"/><br>
+                    <div id="accion">
+                        <input type="submit" value={% block boton %}{% endblock %} />
+                        <a id="accion-secundaria" href={% block accion2enlace %}{% endblock %}>{% block accion2 %}{% endblock %}</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html> 

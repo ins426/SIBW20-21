@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    background-color: #403F4C;
+}
+
+#iniciar-sesion-contenedor{
+    display: flex;
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+}
+
+#sesion-contenedor{
+    height: 550px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:rgb(220,20,60,0.3);
+}
+
+#user{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: auto;
+    position: relative;
+    bottom: 50px;
+    
+}
+
+#iniciar-sesion{
+    position: relative;
+    bottom:250px;
+    left: 5px;
+    font-family: 'Poppins', sans-serif; 
+    color: azure;
+    font-size:30px;
+}
+
+#accion-secundaria{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-left: 55px;
+    font-family: 'Poppins', sans-serif; 
+    color: azure;
+}
+
+input{
+    font-size: 20px;
+}
+
+#accion{
+    display: flex;
+}
+
+#titulo-contenedor{
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 10px;
+}
+
+#logo-blanco{
+    width: 150px;
+    height: 150px; 
+}
+
+#titulo{
+    font-family: 'Poppins', sans-serif; 
+    color: azure; 
+    font-size: 60px; 
+}
