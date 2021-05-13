@@ -51,6 +51,8 @@
         </div>
             {% endfor %}
     </div>
+    
+    {%if identificado == true %}
         <form id="formulario">
             <label for="fname">Nombre</label><br>
                 <input type="text" id="usuario"><br>
@@ -60,6 +62,7 @@
                 <textarea id="comentario" oninput="reemplazarPalabrasFeas('{{palabras|json_encode}}')"></textarea><br> 
                 <input type="button" value="Enviar" id="enviar">
         </form>
+        {%endif%}
     </div>
         <span id="icono-comentarios" style="font-size: 30px;cursor:pointer">&#128488;</span> 
     {% endblock %}

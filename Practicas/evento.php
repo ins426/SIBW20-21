@@ -7,6 +7,13 @@
 
     $conexion = new BD();
 
+    $identificado = false;
+    session_start();
+
+    if(isset($_SESSION['identificado'])){
+        $identificado = true;
+    }
+
     $evento = $conexion->getEvento();
     $imagenes = $conexion->getImagenesEvento();
     $comentarios = $conexion->getComentariosEvento();
@@ -14,5 +21,5 @@
     $palabras = $conexion->getPalabrasProhibidas();
 
     echo $Twig->render('evento.html',['evento' => $evento, 'imagenes' => $imagenes,
-    'comentarios' => $comentarios,'galeria'=>$galeria, 'palabras'=>$palabras]);
+    'comentarios' => $comentarios,'galeria'=>$galeria, 'palabras'=>$palabras,'identificado' => $identificado]);
 ?>
