@@ -191,7 +191,7 @@ class BD{
                 if($res->num_rows > 0){
                     while($row = $res->fetch_assoc()){
                         $comentarios[$i]= array('id'=>$row['id'],'autor'=> $row['autor'],'email'=>$row['email'],'fecha'=>$row['fecha'],
-                        'hora'=>$row['hora'],'comentario'=>$row['comentario']);
+                        'hora'=>$row['hora'],'comentario'=>$row['comentario'], 'id_ev'=>$row['id_ev']);
                         $i++;
                     }
                 }
@@ -317,7 +317,26 @@ class BD{
 
     function borrarComentario($id){
         $q = "DELETE FROM Comentarios WHERE id = $id";
-        echo "HOLAAAAAAA $q";
+        $this->mysqli->query($q);
+    }
+
+    function getComentario($id){
+        $q = "SELECT * FROM Comentarios WHERE id = $id";
+        $res = $this->mysqli->query($q);
+
+        if($res->num_rows > 0){       
+            $row = $res->fetch_assoc();
+            $comentario = array('id'=>$row['id'],'comentario'=>$row['comentario'],'id_ev'=>$row['id_ev']);
+        }else{
+
+            $comentario = array('comentario'=>'XXXXXX','id_ev'=>-1);
+        }
+
+        return $comentario;
+    }
+
+    function editarComentario($id, $comentario){
+        $q = "UPDATE Comentarios SET comentario='$comentario' WHERE id=$id";
         $this->mysqli->query($q);
     }
 

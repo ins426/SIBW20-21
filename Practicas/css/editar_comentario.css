@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/**************************PÁGINA COMPLETA***************************/
+*{
+    margin: 0;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+/********************************************************************/
+/**************************Sección inicio***************************/
+
+#pag-contenedor{
+    width: 119em;
+    height: 1000px;
+    background-image: url(../img/fondo_inicio.jpg);
+    background-size:auto;
+    font-family: 'Poppins', sans-serif; 
+}
+/********************************RRSS*******************************/
+#rrss-contenedor{
+    width: 70px;
+    background: rgba(170, 170, 170, 0.63);
+    height: 950px;
+}
+
+#rrss-imagenes{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    top:20em;
+}
+
+#rrss-contenedor img{
+    width: 40px;
+    height: 40px;
+}
+
+#rrss-contenedor img:hover {
+    opacity: 0.7;
+}
+/********************************************************************/
+/*****************************Menú***********************************/
+#menu-contenedor{
+    display: flex;
+    list-style:none;
+    width:auto;
+    background: rgba(170, 170, 170, 0.63);
+}
+
+#menu-contenedor li{
+    color: white;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#logo-negro{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    right:20px;
+    width: 40px;
+    height: 40px; 
+}
+
+#nombre{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size:25px;
+}
+
+#menu-contenedor li:hover{
+    background: crimson;
+    transition: .5s;
+}
+/********************************************************************/
+/*****************************PIE************************************/
+#contacto-contenedor{
+    position: relative;
+    width: 100%;
+    display: flex;
+    color:black;
+    align-items: center;
+    font-size: small;
+    background-color: rgba(165, 16, 46, 0.6);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    top:5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#copyright{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#email{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: smaller;
+}
+/********************************************************************/
+/********************************************************************/
+#accion{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 10px;
+    font-size: 15px;
+}
+
+#cerrar-sesion{
+    color:black;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#perfil{
+    position: relative;
+    color:black;
+    background-color: white;
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;  
+    right:10px;
+}
+/********************************************************************/
+#editar-contenedor{
+    position: absolute;
+    top:400px;
+    left:650px;
+    background: rgba(170, 170, 170, 0.63); 
+    height: 300px;
+    width: 600px;
+}
+
+textarea {
+    width: 400px;
+    height: 130px;
+}
+
+#formulario{
+    position: relative;
+    left: 100px;
+}
+
+#guardar{
+    position: relative;
+    left:340px;
+}

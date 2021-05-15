@@ -79,6 +79,7 @@ function censura(cadena, filtros){
 }
 /********************************************************************/
 document.getElementById("icono-comentarios").onclick = abrirComentarios;
+document.getElementById("editar").onclick = abrirComentarios;
 document.getElementById("cerrar").onclick = cerrarComentarios;
 document.getElementById("enviar").onclick = aniadirComentario;
 document.getElementById("formulario").addEventListener('input',reemplazarPalabrasFeas);
