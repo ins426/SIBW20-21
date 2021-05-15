@@ -1,0 +1,39 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/perfil.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+        {%block central %}
+            <div id='perfil-contenedor'>
+                <img id= "user" src="../img/user.png">
+                <div id='info-contenedor'>
+                <p><strong>Nombre de usuario:</strong> {{usuario[0][0]}}</p> 
+                <p><strong>Email:</strong> {{usuario[1][0]}}</p> 
+
+                <br>
+                    <div id="tipo-usuario-contenedor">
+                        {%if usuario[2][0] == 1 %}
+                            <strong> <p>Eres super usuario</p></strong>
+                        {%else%}
+                        <strong> <p> No eres super usuario</p></strong>
+                        {% endif%}
+
+                        {%if usuario[3][0] == 1 %}
+                            <strong><p>Eres usuario gestor</p></strong>
+                        {%else%}
+                            <strong> <p> No eres usuario gestor</p></strong>
+                        {% endif%}
+
+                        {%if usuario[4][0] == 1 %}
+                            <strong><p>Eres usuario moderador</p></strong> 
+                        {%else%}
+                            <strong><p> No eres usuario moderador</p></strong> 
+                        {% endif%}
+                    </div>
+
+                    <div id='editar-contenedor'>
+                        <strong> <a id='editar' href='../editar_perfil.php'>Editar</a></strong>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}

@@ -10,12 +10,13 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $nick = $_POST['nick'];
         $pass = $_POST['pass'];
+        $email = $_POST['email'];
 
-        if($conexion->registrarUsuario($nick,$pass)){
-            header("refresh:3;url=login.php");
+        if($conexion->registrarUsuario($nick,$pass,$email)){
+           header("refresh:3;url=login.php");
         }
         else{
-            header("Location: registrarse.php");
+           header("Location: registrarse.php");
         }
     }
 

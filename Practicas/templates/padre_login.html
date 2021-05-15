@@ -19,6 +19,7 @@
                 <h2 id=iniciar-sesion>{% block accion %}{% endblock %}</h2>
                 <form action={% block archivo_accion %}{% endblock %} method="post" id="login">
                     <input type="text" name="nick"  placeholder="Usuario"/><br>
+                    {%block email %}{% endblock %}
                     <input type="password" name="pass" placeholder="Contraseña"/><br>
                     <div id="accion">
                         <input type="submit" value={% block boton %}{% endblock %} />

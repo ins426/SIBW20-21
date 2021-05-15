@@ -291,3 +291,19 @@ a{
     padding-right: 5px;  
     right:10px;
 }
+/*********************PRÁCTICA 4******************************/
+#acciones{
+    display: flex;
+    padding-left: 3px;
+}
+
+#papelera{
+    width:30px;
+    height: 30px;
+}
+
+#editar{
+    width:30px;
+    height: 30px;
+}
+

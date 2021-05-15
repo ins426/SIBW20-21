@@ -190,7 +190,7 @@ class BD{
                 $i = 0;
                 if($res->num_rows > 0){
                     while($row = $res->fetch_assoc()){
-                        $comentarios[$i]= array('autor'=> $row['autor'],'email'=>$row['email'],'fecha'=>$row['fecha'],
+                        $comentarios[$i]= array('id'=>$row['id'],'autor'=> $row['autor'],'email'=>$row['email'],'fecha'=>$row['fecha'],
                         'hora'=>$row['hora'],'comentario'=>$row['comentario']);
                         $i++;
                     }
@@ -236,11 +236,14 @@ class BD{
         return false;
     }
 
-    function registrarUsuario($nick,$pass){
-        $q = "SELECT * FROM Usuarios WHERE nick='".$nick."'";
-        $res = $this->mysqli->query($q);
+    function registrarUsuario($nick,$pass,$email){
+        $comprobacion_nick = "SELECT * FROM Usuarios WHERE nick='".$nick."'";
+        $comprobacion_email = "SELECT * FROM Usuarios WHERE nick='".$email."'";
+        
+        $res1 = $this->mysqli->query($comprobacion_nick);
+        $res2 = $this->mysqli->query($comprobacion_email);
 
-        if($res->$num_rows > 0){
+        if($res1->$num_rows > 0 || $res2->$num_rows > 0){
             return false;
         }
         else{
@@ -249,13 +252,75 @@ class BD{
             $gestor = "false";
             $super = "false";
 
-            $inserta = "INSERT INTO Usuarios (nick,pass,super,moderador,gestor) VALUES('".$nick."', '".$password."',".$super.",".$moderador.",".$gestor.")";
+            $inserta = "INSERT INTO Usuarios (nick,pass,super,moderador,gestor,email) VALUES('".$nick."', '".$password."',".$super.",".$moderador.",".$gestor.",'".$email."')";
             $res = $this->mysqli->query($inserta);
-            echo $super;
             return true;
         }
         
     }
+
+    function getUsuario($nick){
+        $q = "SELECT * FROM Usuarios WHERE nick='".$nick."'";
+        $res = $this->mysqli->query($q);
+
+        if($res->num_rows > 0){
+            $row = $res->fetch_assoc();
+            $usuario = array('nick'=>$row['nick'],'email'=>$row['email'],'super'=>$row['super'],'moderador'=>$row['moderador'],'gestor'=>$row['gestor'],'pass'=>$row['pass']);
+            return $usuario;
+        }
+        else{
+            $usuario = array('nick'=>'XXX','email'=>'XXX','super'=>0,'moderador'=>0,'gestor'=>0);
+            return $usuario;
+        }
+        
+    }
+
+    function editarUsuario($nick,$email,$pass, $usuario_anterior){
+
+        $comprobacion = "SELECT * FROM Usuarios WHERE nick='$nick'";
+        $res = $this->mysqli->query($comprobacion);
+
+        if($res->num_rows > 0){
+            return false;
+        }
+        else{
+            if($email == NULL){
+                $email = $usuario_anterior['email'];
+            }
+    
+            if($pass == NULL){
+                $contraseña = $usuario_anterior['pass']; 
+            }
+            else{
+                $contraseña = password_hash($pass,$PASSWORD_DEFAULT);
+            }
+    
+            if($nick == NULL){
+                $nick =  $usuario_anterior['nick'];
+            }
+    
+            $q = "UPDATE Usuarios SET email='$email',nick='$nick',pass='$contraseña' WHERE nick='$usuario_anterior[nick]'";
+            $this->mysqli->query($q);
+
+            return true;
+        }
+       
+    }
+
+    function aniadirComentario($id, $nick,$email, $comentario){
+        $fecha = date("d/m/Y");
+        $hora = date("H:i");
+
+        $q = "INSERT INTO Comentarios (autor,email,fecha,hora,comentario,id_ev) VALUES('$nick','$email','$fecha','$hora','$comentario',$id)";
+        $this->mysqli->query($q);
+    }
+
+    function borrarComentario($id){
+        $q = "DELETE FROM Comentarios WHERE id = $id";
+        echo "HOLAAAAAAA $q";
+        $this->mysqli->query($q);
+    }
+
 }
 
 ?>

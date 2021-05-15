@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/editar_perfil.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    {%block central %}
+        <div id="editar-contenedor">
+            <div id="foto-perfil">
+                <img id= "user" src="../img/user.png">
+            </div>
+            <div id="info-editar">
+                <form action="editar_perfil.php" method="post" id="editar">
+                    <strong>Nombre de usuario: </strong> <input type="text" name="nick"  placeholder={{usuario[0][0]}}><br>
+                    <strong> Email:</strong> <input type="text" name="email" placeholder={{usuario[1][0]}}><br>
+                    <strong> Nueva contraseña:</strong> <input type="password" name="pass"><br>
+                    <div id='guardar-contenedor'>
+                        <input type="submit" value="Guardar" id="guardar" />
+                    </div>
+                </form>
+                <br>
+                    <div id="tipo-usuario-contenedor">
+                        {%if usuario[2][0] == 1 %}
+                            <strong> <p>Eres super usuario</p></strong>
+                        {%else%}
+                        <strong> <p> No eres super usuario</p></strong>
+                        {% endif%}
+
+                        {%if usuario[2][0] == 1 %}
+                            <strong><p>Eres usuario gestor</p></strong>
+                        {%else%}
+                            <strong> <p> No eres usuario gestor</p></strong>
+                        {% endif%}
+
+                        {%if usuario[3][0] == 1 %}
+                            <strong><p>Eres usuario moderador</p></strong> 
+                        {%else%}
+                            <strong><p> No eres usuario moderador</p></strong> 
+                        {% endif%}
+                    </div>
+            </div>
+        </div>
+    {% endblock %}
