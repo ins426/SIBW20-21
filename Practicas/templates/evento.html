@@ -46,6 +46,9 @@
                     <img id= "user" src="../img/user.png">
                     <div id='mensaje'>
                     <h3>{{comentario['autor']}}, {{comentario['email']}} <br>{{comentario['fecha']}} {{comentario['hora']}}</h3>
+                    {% if comentario['modificado'] == 1 %}
+                        <p><strong>Editado</strong></p>
+                    {% endif %}
                     <p>{{comentario['comentario']}}</p>
                 </div>
                 {% if usuario['moderador'] == 1 %}

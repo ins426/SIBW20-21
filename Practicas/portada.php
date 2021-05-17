@@ -15,6 +15,7 @@
 
     $eventos = [];
     $eventos = $conexion->getEventos();
+    $usuario =  $conexion->getUsuario($_SESSION['nickUsuario']);
     
-    echo $Twig->render('portada.html',['eventos' => $eventos, 'identificado' => $identificado]);
+    echo $Twig->render('portada.html',['eventos' => $eventos, 'identificado' => $identificado,'usuario' =>$usuario]);
 ?>

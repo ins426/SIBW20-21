@@ -5,6 +5,13 @@
     $loader = new \Twig\Loader\FilesystemLoader('templates');
     $Twig = new \Twig\Environment($loader);
 
+    $identificado = false;
+    session_start();
+
+    if(isset($_SESSION['identificado'])){
+        $identificado = true;
+    }
+
     $conexion = new BD();
     $comentario = $conexion->getComentario($_GET['cm']);
 
@@ -24,5 +31,5 @@
         }
     }
 
-    echo $Twig->render('editarComentario.html',['comentario' => $comentario,'palabras' => $palabras]);
+    echo $Twig->render('editarComentario.html',['comentario' => $comentario,'palabras' => $palabras,'identificado' => $identificado]);
 ?>

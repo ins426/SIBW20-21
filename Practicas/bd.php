@@ -191,7 +191,7 @@ class BD{
                 if($res->num_rows > 0){
                     while($row = $res->fetch_assoc()){
                         $comentarios[$i]= array('id'=>$row['id'],'autor'=> $row['autor'],'email'=>$row['email'],'fecha'=>$row['fecha'],
-                        'hora'=>$row['hora'],'comentario'=>$row['comentario'], 'id_ev'=>$row['id_ev']);
+                        'hora'=>$row['hora'],'comentario'=>$row['comentario'], 'id_ev'=>$row['id_ev'],'modificado'=>$row['modificado']);
                         $i++;
                     }
                 }
@@ -311,7 +311,7 @@ class BD{
         $fecha = date("d/m/Y");
         $hora = date("H:i");
 
-        $q = "INSERT INTO Comentarios (autor,email,fecha,hora,comentario,id_ev) VALUES('$nick','$email','$fecha','$hora','$comentario',$id)";
+        $q = "INSERT INTO Comentarios (autor,email,fecha,hora,comentario,id_ev,modificado) VALUES('$nick','$email','$fecha','$hora','$comentario',$id,0)";
         $this->mysqli->query($q);
     }
 
@@ -336,8 +336,41 @@ class BD{
     }
 
     function editarComentario($id, $comentario){
-        $q = "UPDATE Comentarios SET comentario='$comentario' WHERE id=$id";
+        $q = "UPDATE Comentarios SET comentario='$comentario',modificado=1 WHERE id=$id";
         $this->mysqli->query($q);
+    }
+
+    function getComentarios(){
+        $q = "SELECT * FROM Comentarios";
+        $res = $this->mysqli->query($q);
+
+        $i = 1;
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $comentarios[$i] = array('id'=>$row['id'],'comentario'=>$row['comentario'],'id_ev'=>$row['id_ev']-1, 'autor'=>$row['autor'], 'email'=>$row['email'],'modificado'=>$row['modificado'],'fecha'=>$row['fecha'],'hora'=>$row['hora']);
+                $i++;
+            }
+        }else{
+            $comentarios[$i] = array('comentario'=>'XXXXXX','id_ev'=>-1,'autor'=>'XXXXX', 'email'=>'XXXXX','modificado'=>0,'fecha'=>'XX-XX-XXXX','hora'=>'XX:XX');
+        }
+
+        return $comentarios;
+    }
+
+    function buscaComentarios($autor){
+        $q = "SELECT * FROM Comentarios WHERE autor='$autor'";
+        $res = $this->mysqli->query($q);
+
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $comentarios[$i] = array('id'=>$row['id'],'comentario'=>$row['comentario'],'id_ev'=>$row['id_ev']-1, 'autor'=>$row['autor'], 'email'=>$row['email'],'modificado'=>$row['modificado'],'fecha'=>$row['fecha'],'hora'=>$row['hora']);
+                $i++;
+            }
+        }else{
+            $comentarios= NULL;
+        }
+
+        return $comentarios;
     }
 
 }

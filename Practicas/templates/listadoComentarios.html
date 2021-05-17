@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/listadoComentarios.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    {% block central %}
+        <div id='listado-contenedor'>
+            <h2 id='titulo'>Comentarios</h2>
+            <form id="buscar-contenedor" action="listadoComentarios.php" method="post">
+                <input type="search" name="autor" size="20" placeholder="Introduzca un usuario">
+                <input type="submit" value="Buscar">
+            </form>
+            <br>
+            {% for comentario in comentarios %}
+                <div class="mensaje-contenedor">
+                    <img id= "user" src="../img/user.png">
+                    <div id='mensaje'>
+                    <h3>{{eventos[comentario['id_ev']]['nombre']}}<br>{{comentario['autor']}}, {{comentario['email']}} <br>{{comentario['fecha']}} {{comentario['hora']}}</h3>
+                    {% if comentario['modificado'] == 1 %}
+                        <p><strong>Editado</strong></p>
+                    {% endif %}
+                    <p>{{comentario['comentario']}}</p>
+                </div>
+                {% if usuario['moderador'] == 1 %}
+                <div id="acciones">
+                    <a href="/editarComentario.php?cm={{ comentario['id'] }}"><img id= "editar" src="../img/editar.png"></a>
+                    <a href="/listadoComentarios.php?ev={{ comentario['id_ev'] }}&comentId={{ comentario['id'] }}&borrar=true"><img id= "papelera" src="../img/papelera.png"></a>
+                </div>
+                {% endif %}       
+        </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
