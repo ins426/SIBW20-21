@@ -108,11 +108,14 @@ a{
 }
 /********************************************************************/
 /*****************************Evento*********************************/
-#feria{
+#evento-contenedor{
     display: flex;
     position: absolute;
-    left:5em;
-    bottom:4em;
+    top: 0;
+    left: 75px;
+    right: 0;
+    bottom: 0;
+    margin-top: 50px;
     width: 95%;
     align-items: center;
     transition: 1s;

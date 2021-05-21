@@ -10,7 +10,6 @@ a{
     text-decoration:none;
     color:white;
 }
-
 /********************************************************************/
 /**************************Sección inicio***************************/
 
@@ -21,7 +20,6 @@ a{
     background-size:auto;
     font-family: 'Poppins', sans-serif; 
 }
-
 /********************************RRSS*******************************/
 #rrss-contenedor{
     width: 70px;
@@ -84,108 +82,6 @@ a{
     transition: .5s;
 }
 /********************************************************************/
-/*****************************Portada********************************/
-#portada{
-    position: relative;
-    display: flex;
-    align-items: center;
-    bottom:35em;
-    margin-left: 10em;
-}
-
-#nombre-pagina{
-    display: flex;
-    text-align: center;
-    transition: 1s;
-    color: white;
-}
-
-#nombre-principal{
-    font-size:100px;
-}
-
-#nombre-secundario{
-    position: relative;
-    font-size: 20px;
-}
-
-#logo-blanco{
-    height: 200px;
-    width: 200px;
-}
-
-#cita-contenedor{
-    display: flex;
-    text-decoration: none;
-    justify-content: start;
-    width: 30em;
-    background-color:rgb(220,20,60,0.8);
-    transition: 1.5s;
-    color:white;
-    margin-left: 20em;
-}
-
-#cita{
-    font-size:30px;
-}
-/********************************************************************/
-/**************************Sección de eventos************************/
-#eventos{
-    width: 119em;
-    height: 1000px;
-    background-color:rgba(128, 128, 128, 0.664) ;
-    overflow: hidden;
-}
-
-#subtitulo-eventos{
-    font-size: 50px;
-    text-align: center;
-    color:white;
-    font-family: 'Raleway',sans-serif;
-}
-
-#eventos-iconos{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
-    transition: 1s;
-}
-
-.texto{
-    position: relative;
-    background-color: rgba(220, 20, 60, 0.719);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1.5em;
-    margin-bottom: auto;
-    width: 300px;
-    font-size: 30px;
-    text-align: center;
-    font-family: 'Raleway',sans-serif;
-    color: white;
-}
-
-.item{
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-#icono{
-    width: 25em;
-    height: 15em;
-    background-size: cover;
-}
-
-.item:hover .texto{
-    transform : scale(1.1);
-    transition: .5s ease; 
-}
-
-#img-feria:hover {
-    opacity: 0.4;
-    transition: .5s ease;
-} 
-/********************************************************************/
 /*****************************PIE************************************/
 #contacto-contenedor{
     position: relative;
@@ -197,6 +93,7 @@ a{
     background-color: rgba(165, 16, 46, 0.6);
     padding-top: 1em;
     padding-bottom: 1em;
+    top:5px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -212,30 +109,13 @@ a{
     font-size: smaller;
 }
 /********************************************************************/
+/********************************************************************/
 #accion{
     display: flex;
     align-items: center;
     position: relative;
     right: 10px;
     font-size: 15px;
-}
-
-#iniciar-sesion{
-    position: relative;
-    color:black;
-    right: 10px;
-    background-color: white;
-    border-radius: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-#registrarse{
-    color:black;
-    background-color: white;
-    border-radius: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 #cerrar-sesion{
@@ -254,21 +134,4 @@ a{
     padding-left: 5px;
     padding-right: 5px;  
     right:10px;
-}
-
-#cabecera-eventos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#cabecera-eventos img:hover {
-    opacity: 0.7;
-}
-
-#aniadir{
-    position: relative;
-    left: 20px;
-    width: 30px;
-    height: 30px;
 }

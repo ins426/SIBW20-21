@@ -373,6 +373,125 @@ class BD{
         return $comentarios;
     }
 
+    function uploadImagen($imagen){
+        $file_size = $_FILES['icono']['size'];
+        $file_tmp = $_FILES['icono']['tmp_name'];
+        $file_type = $_FILES['icono']['type'];
+        $file_ext = strtolower(end(explode('.',$_FILES['icono']['name'])));
+
+        $extensions = array ('jpeg','jpg','png');
+
+        if(in_array($file_ext,$extensions) == true && $file_size < 2097152 ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    function aniadirEvento(){
+
+/***************************INSERCIÓN DE LA INFORMACIÓN DEL EVENTO ************************************/
+        if(isset($_FILES['icono'])){
+            $file_name = $_FILES['icono']['name'];
+            $file_size = $_FILES['icono']['size'];
+            $file_tmp = $_FILES['icono']['tmp_name'];
+        
+            $subirimagen = self::uploadImagen($_FILES['icono']);
+
+            if($subirimagen){
+                move_uploaded_file($file_tmp, "img/" . $file_name);
+            }else{
+                $file_name = 'internacional.jpg';
+            }
+        }else{
+            $file_name = 'internacional.jpg';
+        }
+
+        $nombre =  $_POST['nombre'];
+        $organizador = $_POST['organizador'];
+        $horainicio = $_POST['horainicio'];
+        $horafin = $_POST['horafin'];
+        $descripcion = $_POST['descripcion'];
+        $fechainicio = $_POST['fechainicio'];
+        $fechafin = $_POST['fechafin'];
+
+        $q = "SELECT id FROM Eventos ORDER BY id DESC LIMIT 1";
+        $res = $this->mysqli->query($q);
+        $row = $res->fetch_assoc();
+        $id_ultimo = $row['id'];
+
+        $q = "ALTER TABLE Eventos AUTO_INCREMENT = $id_ultimo";
+        $this->mysqli->query($q);
+
+        $q = "INSERT INTO Eventos (nombre,organizador,horainicio,horafin,descripcion,fechainicio,fechafin,icono) VALUES ('$nombre','$organizador',
+                                    '$horainicio','$horafin','$descripcion','$fechainicio','$fechafin','$file_name')";
+        $this->mysqli->query($q);
+
+        //Para obtener el id del nuevo evento insertado
+        $q = "SELECT id FROM Eventos ORDER BY id DESC LIMIT 1";
+        $res = $this->mysqli->query($q);
+        $row = $res->fetch_assoc();
+        $id = $row['id'];
+
+/*********************************INSERCIÓN DE IMÁGENES*************************************** */
+        //Para obtener la id de la última imagen insertada
+        $q = "SELECT id FROM Imagenes ORDER BY id DESC LIMIT 1";
+        $res = $this->mysqli->query($q);
+        $row = $res->fetch_assoc();
+        $id_ultimo_img = $row['id'];
+        $q = "ALTER TABLE Imagenes AUTO_INCREMENT = $id_ultimo_img";
+        $this->mysqli->query($q);
+
+/****************************************IMAGEN 1***********************************************/
+        if(isset($_FILES['imagen1'])){
+            $file_name = $_FILES['imagen1']['name'];
+            $file_size = $_FILES['imagen1']['size'];
+            $file_tmp = $_FILES['imagen1']['tmp_name'];
+        
+            $subirimagen = self::uploadImagen($_FILES['imagen1']);
+
+            if($subirimagen){
+               move_uploaded_file($file_tmp, "img/" . $file_name);
+            }else{
+                $file_name = 'internacional.jpg';
+            }
+        }else{
+            $file_name = 'internacional.jpg';
+        }
+        $pie1 = $_POST['pie1'];
+        $q = "INSERT INTO Imagenes(nombre,id_ev,pie) VALUES ('$file_name',$id,'$pie1')";
+        $this->mysqli->query($q);
+/****************************************IMAGEN 2***********************************************/
+        if(isset($_FILES['imagen2'])){
+            $file_name = $_FILES['imagen2']['name'];
+            $file_size = $_FILES['imagen2']['size'];
+            $file_tmp = $_FILES['imagen2']['tmp_name'];
+        
+            $subirimagen = self::uploadImagen($_FILES['imagen2']);
+
+            if($subirimagen){
+                move_uploaded_file($file_tmp, "img/" . $file_name);
+            }else{
+                $file_name = 'internacional.jpg';
+            }
+        }else{
+            $file_name = 'internacional.jpg';
+        }
+        $pie2 = $_POST['pie2'];
+        $q = "INSERT INTO Imagenes(nombre,id_ev,pie) VALUES ('$file_name',$id,'$pie2')";
+        $this->mysqli->query($q);
+/****************************************GALERÍA***********************************************/
+        $n_imagenes = 2;
+
+         for($i=0;$i<$n_imagenes;$i++){
+            $filename = $_FILES['upload']['name'][$i];
+            move_uploaded_file($_FILES['upload']['tmp_name'][$i], "img/" . $filename);
+            
+            $q = "INSERT INTO Imagenes(nombre,id_ev) VALUES ('$filename',$id)";
+            $this->mysqli->query($q);
+        }
+    }
 }
 
 ?>

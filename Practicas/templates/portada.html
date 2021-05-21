@@ -22,7 +22,12 @@
         <!--------------------------------------------------------------------------------------------->
         <!---------------------Sección de eventos------------------------------------------------------>
         <div id="eventos">
-            <h2 id="subtitulo-eventos">Próximos eventos</h2>
+            <div id='cabecera-eventos'>
+                <h2 id="subtitulo-eventos">Eventos</h2>
+                {%if usuario['gestor'] == 1 %}
+                <a href='../aniadirEvento.php'><img id= "aniadir" src="../img/aniadir.png"></a>
+                {%endif%}
+            </div>
             <div id="eventos-iconos">
             {% for evento in eventos %}
                 <a href="./evento.php?ev={{evento['id']}}"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">

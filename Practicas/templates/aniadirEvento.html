@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/aniadirEvento.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    {% block central %}
+    <div id="aniadir-contenedor">
+        <h1 id="titulo">Crear evento</h1>
+        <form action="aniadirEvento.php" method="post" enctype="multipart/form-data">
+           <div id='aniadirform'>
+            <div id="info-evento">
+                <strong>Nombre del evento</strong> <br> <input type="text" name="nombre" required/><br>
+                <strong>Organizador</strong> <br> <input type="text" name="organizador" required/><br>
+                <strong>Fecha de inicio</strong> <br> <input type="text" name="fechainicio" required/><br>
+                <strong>Fecha de fin</strong> <br> <input type="text" name="fechafin" required/><br>
+                <strong>Hora de inicio</strong> <br> <input type="text" name="horainicio" required/><br>
+                <strong>Hora de fin</strong> <br> <input type="text" name="horafin" required/><br><br><br>
+                <strong>Icono</strong> <input type="file" name="icono" required/><br><br>
+                <strong>Imagen 1</strong> <input type="file" name="imagen1" required/><br>
+                <strong>Pie imagen 1</strong> <input type="text" name="pie1" required/><br><br>
+                <strong>Imagen 2</strong> <input type="file" name="imagen2" required/><br>
+                <strong>Pie imagen 2</strong> <input type="text" name="pie2" required/><br><br>
+                <strong>Galería</strong> <input type="file" name="upload[]" multiple/><br>
+            </div>
+            <div id="descripcion">
+                <strong>Descripción</strong><br> <textarea name="descripcion" rows="20" cols="55" required></textarea><br>
+            </div>
+           </div>
+            <input type="submit" id="crear-boton" value="Crear" />
+        </form>
+    </div>
+
+    {% endblock %}
