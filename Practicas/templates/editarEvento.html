@@ -1,5 +1,34 @@
 {% extends "padre.html" %}
     {% block css %}
-        <link href="../css/editar_comentario.css" rel="stylesheet" type="text/css">
+        <link href="../css/editar_evento.css" rel="stylesheet" type="text/css">
         <script src="../js/javascript.js" defer></script>
+    {% endblock %}
+
+    {% block central %}
+    <div id="editar-contenedor">
+        <h2 id="titulo">Editar evento</h2>
+        <form form action="editarEvento.php?ev={{ evento['id'] }}" method="post" id="formulario">
+            <div id="formulario-editar">
+                <div id="cabecera-contenedor">
+                    <label>Nombre del evento</label><br>
+                    <textarea name='nombre' rows="1">{{evento['nombre']}}</textarea><br>
+                    <label>Organizador</label><br>
+                    <textarea name='organizador' rows="1">{{evento['organizador']}}</textarea><br>
+                    <label>Fecha de inicio del evento</label><br>
+                    <textarea name='fechainicio' rows="1">{{evento['fechainicio']}}</textarea><br>
+                    <label>Fecha de fin del evento</label><br>
+                    <textarea name='fechafin' rows="1">{{evento['fechafin']}}</textarea><br>
+                    <label>Hora de inicio</label><br>
+                    <textarea name='horainicio' rows="1">{{evento['horainicio']}}</textarea><br>
+                    <label>Hora de fin</label><br>
+                    <textarea name='horafin' rows="1">{{evento['horafin']}}</textarea><br>
+                </div>
+                <div id="descripcion-contenedor">
+                    <label>Descripción</label><br>
+                    <textarea name='descripcion' rows="15" cols="50">{{evento['descripcion']}}</textarea><br>    
+                </div>
+            </div>
+            <input type="submit" value="Guardar" id="guardar">
+        </form>
+    </div>
     {% endblock %}

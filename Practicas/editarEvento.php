@@ -12,5 +12,15 @@
         $identificado = true;
     }
 
-    echo $Twig->render('editarEvento.html', ['identificado' => $identificado]);
+    $conexion = new BD();
+    $evento = $conexion->getEvento();
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+        $conexion->editarEvento($evento['id']);
+        header("Location: evento.php?ev=".$evento['id']);
+
+        exit();      
+    }
+
+    echo $Twig->render('editarEvento.html', ['identificado' => $identificado,'evento' => $evento]);
 ?>

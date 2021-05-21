@@ -12,6 +12,10 @@
     <!-------------------------Evento----------------------->
     <article id="evento-contenedor">
         <div id="info">
+            {% if usuario['gestor'] == 1 %}
+                <a href="/editarEvento.php?ev={{ evento['id'] }}"><img id= "editar-evento" src="../img/editar.png"></a>
+                <a href="/evento.php?ev={{ evento['id'] }}&comentId={{ comentario['id'] }}&borrar=true"><img id= "papelera-evento" src="../img/papelera.png"></a>
+            {% endif %}
             <h1 id="nombre-evento">{{evento['nombre']}}</h1>
             <h2 id="organizador">Organizada por {{evento['organizador']}}</h2>
             <h3 id="fecha">{{evento['fechainicio']}} al {{evento['fechafin']}}, de {{evento['horainicio']}} a {{evento['horafin']}}</h3>

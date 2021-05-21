@@ -135,3 +135,37 @@ a{
     padding-right: 5px;  
     right:10px;
 }
+/********************************************************************/
+#editar-contenedor{
+    position: absolute;
+    top:350px;
+    left:500px;
+    background: rgba(170, 170, 170, 0.63); 
+    height: 400px;
+    width: 1000px;
+}
+
+#titulo{
+    display: flex;
+    justify-content: center;
+}
+
+#formulario-editar{
+    display: flex;
+}
+
+#descripcion-contenedor{
+    position: relative;
+    left: 250px;
+    top:15px;
+}
+
+#cabecera-contenedor{
+    position: relative;
+    left:30px;
+}
+
+#guardar{
+    position:relative;
+    left:850px;
+}

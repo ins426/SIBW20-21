@@ -492,6 +492,21 @@ class BD{
             $this->mysqli->query($q);
         }
     }
+
+    function editarEvento($id){
+        $nombre = $_POST['nombre'];
+        $organizador = $_POST['organizador'];
+        $horainicio = $_POST['horainicio'];
+        $horafin = $_POST['horafin'];
+        $descripcion = $_POST['descripcion'];
+        $fechainicio = $_POST['fechainicio'];
+        $fechafin = $_POST['fechafin'];
+
+        $q = "UPDATE Eventos SET nombre='$nombre',organizador='$organizador',horainicio='$horainicio', horafin='$horafin',
+        descripcion='$descripcion',fechainicio='$fechainicio',fechafin='$fechafin' WHERE id=$id";
+
+        $this->mysqli->query($q);
+    }
 }
 
 ?>
