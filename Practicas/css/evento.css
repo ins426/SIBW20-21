@@ -320,3 +320,7 @@ a{
     width: 50px;
 }
 
+#acciones-evento{
+    display: flex;
+}
+

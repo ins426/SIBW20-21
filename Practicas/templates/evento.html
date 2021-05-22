@@ -13,8 +13,10 @@
     <article id="evento-contenedor">
         <div id="info">
             {% if usuario['gestor'] == 1 %}
+            <div id="acciones-evento">
                 <a href="/editarEvento.php?ev={{ evento['id'] }}"><img id= "editar-evento" src="../img/editar.png"></a>
-                <a href="/evento.php?ev={{ evento['id'] }}&comentId={{ comentario['id'] }}&borrar=true"><img id= "papelera-evento" src="../img/papelera.png"></a>
+                <a href="/evento.php?ev={{ evento['id'] }}&borrar_evento=true"><img id= "papelera-evento" src="../img/papelera.png"></a>
+            </div>
             {% endif %}
             <h1 id="nombre-evento">{{evento['nombre']}}</h1>
             <h2 id="organizador">Organizada por {{evento['organizador']}}</h2>

@@ -27,6 +27,11 @@
         header("Location: evento.php?ev=" . $_GET['ev']);
     }
 
+    if($usuario['gestor'] == 1 && $_GET['borrar_evento']  == true){
+        $conexion->borrarEvento($evento['id']);
+        header("Location:portada.php");
+    }
+
     echo $Twig->render('evento.html',['evento' => $evento, 'imagenes' => $imagenes,
     'comentarios' => $comentarios,'galeria'=>$galeria, 'palabras'=>$palabras,'identificado' => $identificado, 'usuario' => $usuario]);
 ?>

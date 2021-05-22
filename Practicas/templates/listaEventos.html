@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/listaEventos.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    {%block central %}
+        <div id="listado-contenedor">
+            <h1 id="titulo">Lista de eventos</h1>
+            {% for evento in eventos %}
+                <div id="item-evento">
+                    <a href="evento.php?ev={{evento['id']}}">
+                        <h3>{{evento['nombre']}}{{ evento['fechainicio']}} al {{evento['fechafin']}} </h3>
+                    </a>
+                    <div id="acciones-evento">
+                        <a href="/editarEvento.php?ev={{ evento['id'] }}"><img id= "editar-evento" src="../img/editar.png"></a>
+                        <a href="/evento.php?ev={{ evento['id'] }}&borrar_evento=true"><img id= "papelera-evento" src="../img/papelera.png"></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}

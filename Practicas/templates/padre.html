@@ -20,6 +20,9 @@
                 <p id="nombre">Agapea</p>
                 <li> <a href='./portada.php#inicio' id="inicio-enlace">Inicio</a></li>
                 <li> <a href='./portada.php#eventos' id="eventos-enlace">Eventos</a></li>
+                {% if usuario['gestor'] == 1 %}
+                    <li><a href='listaEventos.php'>Lista de eventos</a></li>
+                {% endif %}
                 {%if usuario['moderador'] == 1 %}
                     <li><a href='listadoComentarios.php'>Comentarios</a></li>
                 {% endif %}

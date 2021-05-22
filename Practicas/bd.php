@@ -391,7 +391,7 @@ class BD{
 
     function aniadirEvento(){
 
-/***************************INSERCIÓN DE LA INFORMACIÓN DEL EVENTO ************************************/
+        /***************************INSERCIÓN DE LA INFORMACIÓN DEL EVENTO ************************************/
         if(isset($_FILES['icono'])){
             $file_name = $_FILES['icono']['name'];
             $file_size = $_FILES['icono']['size'];
@@ -434,7 +434,7 @@ class BD{
         $row = $res->fetch_assoc();
         $id = $row['id'];
 
-/*********************************INSERCIÓN DE IMÁGENES*************************************** */
+        /*********************************INSERCIÓN DE IMÁGENES*************************************** */
         //Para obtener la id de la última imagen insertada
         $q = "SELECT id FROM Imagenes ORDER BY id DESC LIMIT 1";
         $res = $this->mysqli->query($q);
@@ -443,7 +443,7 @@ class BD{
         $q = "ALTER TABLE Imagenes AUTO_INCREMENT = $id_ultimo_img";
         $this->mysqli->query($q);
 
-/****************************************IMAGEN 1***********************************************/
+        /****************************************IMAGEN 1***********************************************/
         if(isset($_FILES['imagen1'])){
             $file_name = $_FILES['imagen1']['name'];
             $file_size = $_FILES['imagen1']['size'];
@@ -462,7 +462,7 @@ class BD{
         $pie1 = $_POST['pie1'];
         $q = "INSERT INTO Imagenes(nombre,id_ev,pie) VALUES ('$file_name',$id,'$pie1')";
         $this->mysqli->query($q);
-/****************************************IMAGEN 2***********************************************/
+        /****************************************IMAGEN 2***********************************************/
         if(isset($_FILES['imagen2'])){
             $file_name = $_FILES['imagen2']['name'];
             $file_size = $_FILES['imagen2']['size'];
@@ -481,7 +481,7 @@ class BD{
         $pie2 = $_POST['pie2'];
         $q = "INSERT INTO Imagenes(nombre,id_ev,pie) VALUES ('$file_name',$id,'$pie2')";
         $this->mysqli->query($q);
-/****************************************GALERÍA***********************************************/
+        /****************************************GALERÍA***********************************************/
         $n_imagenes = 2;
 
          for($i=0;$i<$n_imagenes;$i++){
@@ -505,6 +505,13 @@ class BD{
         $q = "UPDATE Eventos SET nombre='$nombre',organizador='$organizador',horainicio='$horainicio', horafin='$horafin',
         descripcion='$descripcion',fechainicio='$fechainicio',fechafin='$fechafin' WHERE id=$id";
 
+        $this->mysqli->query($q);
+    }
+
+    function borrarEvento($id){
+        $q = "DELETE FROM Imagenes WHERE id_ev=$id";
+        $this->mysqli->query($q);
+        $q = "DELETE FROM Eventos WHERE id=$id";
         $this->mysqli->query($q);
     }
 }
