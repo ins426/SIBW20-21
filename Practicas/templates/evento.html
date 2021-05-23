@@ -29,6 +29,13 @@
                 <p class="pie">{{imagen['pie']}}</p>
             {% endfor %} 
         </div> 
+        <div id="etiquetas">
+            {% for etiqueta in etiquetas %}
+                <div id="etiqueta-contenedor">
+                    <p><strong>{{etiqueta['texto']}}</strong></p>
+                </div>
+            {% endfor %}
+        </div>
     </article>  
     <!------------------------------------------------------>
     <!-------------------------Galería----------------------->

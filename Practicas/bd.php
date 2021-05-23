@@ -434,6 +434,9 @@ class BD{
         $row = $res->fetch_assoc();
         $id = $row['id'];
 
+        /*********************************INSERCIÓN DE ETIQUETAS************************************** */
+        self::aniadirEtiquetas($id);
+
         /*********************************INSERCIÓN DE IMÁGENES*************************************** */
         //Para obtener la id de la última imagen insertada
         $q = "SELECT id FROM Imagenes ORDER BY id DESC LIMIT 1";
@@ -511,8 +514,42 @@ class BD{
     function borrarEvento($id){
         $q = "DELETE FROM Imagenes WHERE id_ev=$id";
         $this->mysqli->query($q);
+        $q = "DELETE FROM Etiquetas WHERE id_ev=$id";
+        $this->mysqli->query($q);
         $q = "DELETE FROM Eventos WHERE id=$id";
         $this->mysqli->query($q);
+    }
+
+    function getEtiquetas($id){
+        $q = "SELECT * FROM Etiquetas WHERE id_ev=$id";
+        $res = $this->mysqli->query($q);
+
+        $i = 0;
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $etiquetas[$i] = array('id'=>$row['id'],'texto'=>$row['texto'],'id_ev'=>$row['id_ev']);
+                $i++;
+            }
+        }else{
+            $etiquetas= NULL;
+        }
+
+        return $etiquetas;
+    }
+
+    function aniadirEtiquetas($id_ev) {
+        $etiquetas = explode(',', $_POST['etiquetas']);
+
+        if(is_array($etiquetas)) {
+            foreach($etiquetas as $etiqueta) {
+                $q = "INSERT INTO Etiquetas (id_ev,texto) VALUES ('$id_ev', '$etiqueta')";
+                $this->mysqli->query($q);
+            }
+        }
+        else {
+            $q = "INSERT INTO Etiquetas (id_ev,texto) VALUES ('$id_ev', '$etiquetas')";
+            $this->mysqli->query($q);
+        }
     }
 }
 

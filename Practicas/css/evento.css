@@ -324,3 +324,18 @@ a{
     display: flex;
 }
 
+#etiquetas{
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    bottom: 150px;
+}
+#etiqueta-contenedor{
+    background-color: white;
+    margin-right: 50px;
+    border-radius: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+

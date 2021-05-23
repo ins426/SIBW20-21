@@ -21,6 +21,7 @@
     $palabras = $conexion->getPalabrasProhibidas();
 
     $usuario =  $conexion->getUsuario($_SESSION['nickUsuario']);
+    $etiquetas = $conexion->getEtiquetas($evento['id']);
 
     if($usuario['moderador'] == 1 && isset($_GET['comentId']) && $_GET['borrar']  == true){
         $conexion->borrarComentario($_GET['comentId']);
@@ -33,5 +34,5 @@
     }
 
     echo $Twig->render('evento.html',['evento' => $evento, 'imagenes' => $imagenes,
-    'comentarios' => $comentarios,'galeria'=>$galeria, 'palabras'=>$palabras,'identificado' => $identificado, 'usuario' => $usuario]);
+    'comentarios' => $comentarios,'galeria'=>$galeria, 'palabras'=>$palabras,'identificado' => $identificado, 'usuario' => $usuario,'etiquetas' => $etiquetas]);
 ?>

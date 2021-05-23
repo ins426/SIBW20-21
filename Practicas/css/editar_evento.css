@@ -156,7 +156,7 @@ a{
 
 #descripcion-contenedor{
     position: relative;
-    left: 250px;
+    left: 200px;
     top:15px;
 }
 
@@ -168,4 +168,5 @@ a{
 #guardar{
     position:relative;
     left:850px;
+    bottom:35px;
 }

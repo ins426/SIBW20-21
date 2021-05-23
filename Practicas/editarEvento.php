@@ -14,13 +14,15 @@
 
     $conexion = new BD();
     $evento = $conexion->getEvento();
+    $etiquetas = $conexion->getEtiquetas($evento['id']);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
         $conexion->editarEvento($evento['id']);
+        $conexion->aniadirEtiquetas($evento['id']);
         header("Location: evento.php?ev=".$evento['id']);
 
         exit();      
     }
 
-    echo $Twig->render('editarEvento.html', ['identificado' => $identificado,'evento' => $evento]);
+    echo $Twig->render('editarEvento.html', ['identificado' => $identificado,'evento' => $evento, 'etiquetas'=>$etiquetas]);
 ?>

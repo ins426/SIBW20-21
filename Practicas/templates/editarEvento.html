@@ -22,6 +22,9 @@
                     <textarea name='horainicio' rows="1">{{evento['horainicio']}}</textarea><br>
                     <label>Hora de fin</label><br>
                     <textarea name='horafin' rows="1">{{evento['horafin']}}</textarea><br>
+                    <label>Etiquetas (separadas por comas)</label><br>
+                    <textarea name='etiquetas' rows="1" cols="35">{% for etiqueta in etiquetas %}{{etiqueta['texto'] | trim('\n')}}{%if not loop.last %},{% endif %}{% endfor %}
+                    </textarea><br>
                 </div>
                 <div id="descripcion-contenedor">
                     <label>Descripción</label><br>
