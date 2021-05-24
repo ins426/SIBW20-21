@@ -1,0 +1,54 @@
+{% extends "padre.html" %}
+    {% block css %}
+        <link href="../css/editarPermisos.css" rel="stylesheet" type="text/css">
+    {% endblock %}
+    {% block central %}
+        <div id="listado-contenedor">
+            {% for user in usuarios%}
+                {% if user['nombre'] != usuario['nick'] %}
+                    <div id="user-contenedor">
+                        <img id= "user" src="../img/user.png">
+                        <div id="info-user">
+                            {{user['nombre']}}, {{user['email']}}
+                            {% if user['super'] == 0%}              
+                                {% if user['moderador'] == 1 %}
+                                    <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&moderador=0"><button>Moderador ✖️</button></a>
+                                {%else%}
+                                    <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&moderador=1"><button>Moderador ➕</button></a>
+                                {% endif %}
+
+                                {% if user['gestor'] == 1 %}
+                                    <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&gestor=0"><button>Gestor ✖️</button></a>
+                                {%else%}
+                                    <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&gestor=1"><button>Gestor ➕</button></a>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if user['super'] == 1 %}
+                                <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&super=0"><button>Superusuario ✖️</button></a>
+                            {%else%}
+                                <a href="/editarPermisos.php?nombre={{ user['nombre'] }}&super=1"><button>Superusuario ➕</button></a>
+                            {% endif %}
+                            <div id="tipo-usuario-contenedor">
+                                {% if user['moderador'] == 1 %}
+                                    Es moderador.
+                                {% else %}
+                                    No es moderador.
+                                {% endif %}
+                                {% if user['gestor'] == 1 %}
+                                    Es gestor.
+                                {% else %}
+                                    No es gestor.
+                                {% endif %}
+                                {% if user['super'] == 1 %}
+                                    Es superusuario.
+                                {% else %}
+                                    No es superusuario.
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endblock%}

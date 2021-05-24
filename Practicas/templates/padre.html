@@ -23,6 +23,9 @@
                 {% if usuario['gestor'] == 1 %}
                     <li><a href='listaEventos.php'>Lista de eventos</a></li>
                 {% endif %}
+                {%if usuario['super'] == 1 %}
+                    <li><a href='editarPermisos.html'>Lista de Usuarios</a></li>
+                {% endif %}
                 {%if usuario['moderador'] == 1 %}
                     <li><a href='listadoComentarios.php'>Comentarios</a></li>
                 {% endif %}

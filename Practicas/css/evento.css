@@ -79,11 +79,11 @@ a{
 
 #menu-contenedor li{
     color: white;
-    font-size: 30px;
+    font-size: 23px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #logo-negro{
@@ -184,7 +184,7 @@ a{
 
 #icono-comentarios{
     position: absolute;
-    right: 1em;
+    right: 0.5em;
     top: 0;
 }
 
@@ -255,7 +255,7 @@ a{
     display: flex;
     align-items: center;
     position: relative;
-    right: 80px;
+    right: 50px;
     font-size: 15px;
 }
 

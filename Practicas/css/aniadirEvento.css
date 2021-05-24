@@ -54,11 +54,11 @@ a{
 
 #menu-contenedor li{
     color: white;
-    font-size: 30px;
+    font-size: 23px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #logo-negro{

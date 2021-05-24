@@ -551,6 +551,45 @@ class BD{
             $this->mysqli->query($q);
         }
     }
+
+    function getUsuarios(){
+        $q = "SELECT * FROM Usuarios";
+        $res = $this->mysqli->query($q);
+
+        $i = 0;
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $usuarios[$i] = array('nombre'=>$row['nick'],'super'=>$row['super'],'moderador'=>$row['moderador'],'gestor'=>$row['gestor'],'email'=>$row['email']);
+                $i++;
+            }
+        }else{
+            $usuarios= NULL;
+        }
+
+        return $usuarios;
+    }
+
+    function editarPermisos($nick,$opcion,$valor){
+        switch($opcion){
+            case "moderador":
+                $q = "UPDATE Usuarios SET moderador='$valor' WHERE nick='$nick'";
+                $this->mysqli->query($q);
+                break;
+            case "gestor":
+                $q = "UPDATE Usuarios SET gestor='$valor' WHERE nick='$nick'";
+                $this->mysqli->query($q);
+                break;
+            case "super":
+                $q = "UPDATE Usuarios SET super='$valor' WHERE nick='$nick'";
+                $this->mysqli->query($q);
+                $q = "UPDATE Usuarios SET gestor='$valor' WHERE nick='$nick'";
+                $this->mysqli->query($q);
+                $q = "UPDATE Usuarios SET moderador='$valor' WHERE nick='$nick'";
+                $this->mysqli->query($q);
+                break;
+
+        }
+    }
 }
 
 ?>

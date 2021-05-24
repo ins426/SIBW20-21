@@ -136,7 +136,7 @@ a{
     padding-right: 5px;  
     right:10px;
 }
-/********************************************************************/
+/****************************************************************/
 #listado-contenedor{
     height: 80%;
     width: 50%;
@@ -149,34 +149,29 @@ a{
     overflow: scroll;
 }
 
-#titulo{
-    display: flex;
-    justify-content: center;
-}
-
-#item-evento{
+#user-contenedor{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     top: 10px;
     margin-bottom: 1em;
+    width: 100%;
     color: white;
-    padding: auto;
-    padding: 15px 25px;
     background-color: rgba(220, 20, 60, 0.692);
+    display: flex;
 }
 
-#acciones-evento{
+#info-user{
     position: relative;
-    left: 10px;
-}
-#editar-evento{
-    width:30px;
-    height: 30px;
+    left:50px;
+    font-size:17px;
 }
 
-#papelera-evento{
-    width:30px;
-    height: 30px;
+#tipo-usuario-contenedor{
+    font-size: 16px;
+    color: black;
+    font-weight:bold;
+}
+
+#user{
+    width:80px;
+    height: 80px;
 }
