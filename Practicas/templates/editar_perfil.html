@@ -9,7 +9,7 @@
                 <img id= "user" src="../img/user.png">
             </div>
             <div id="info-editar">
-                <form action="editar_perfil.php" method="post" id="editar">
+                <form action="editar_perfil.php" method="post" id="editar" enctype="multipart/form-data">
                     <strong>Nombre de usuario: </strong> <input type="text" name="nick"  placeholder={{usuario[0][0]}}><br>
                     <strong> Email:</strong> <input type="text" name="email" placeholder={{usuario[1][0]}}><br>
                     <strong> Nueva contraseña:</strong> <input type="password" name="pass"><br>

@@ -6,7 +6,7 @@
     {% block central %}
         <div id='listado-contenedor'>
             <h2 id='titulo'>Comentarios</h2>
-            <form id="buscar-contenedor" action="listadoComentarios.php" method="post">
+            <form id="buscar-contenedor" action="listadoComentarios.php" method="post" enctype="multipart/form-data">
                 <input type="search" name="autor" size="20" placeholder="Introduzca un usuario">
                 <input type="submit" value="Buscar">
             </form>

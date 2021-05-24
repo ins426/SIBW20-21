@@ -485,7 +485,7 @@ class BD{
         $q = "INSERT INTO Imagenes(nombre,id_ev,pie) VALUES ('$file_name',$id,'$pie2')";
         $this->mysqli->query($q);
         /****************************************GALERÍA***********************************************/
-        $n_imagenes = 2;
+        $n_imagenes = count($_FILES['upload']['name']);
 
          for($i=0;$i<$n_imagenes;$i++){
             $filename = $_FILES['upload']['name'][$i];
@@ -589,6 +589,24 @@ class BD{
                 break;
 
         }
+    }
+
+    function buscarEvento($palabra){
+        $q = "SELECT * FROM Eventos WHERE descripcion LIKE '%$palabra%'";
+        $res = $this->mysqli->query($q);
+
+        $i = 0;
+        if($res->num_rows > 0){
+            while($row = $res->fetch_assoc()){
+                $eventos[$i] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
+                'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
+                $i++;
+            }
+        }else{
+            $eventos= NULL;
+        }
+
+        return $eventos;
     }
 }
 

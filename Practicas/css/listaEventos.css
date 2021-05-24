@@ -180,3 +180,8 @@ a{
     width:30px;
     height: 30px;
 }
+
+#buscar-contenedor{
+    position: relative;
+    left: 650px;
+}

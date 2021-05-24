@@ -6,6 +6,10 @@
     {%block central %}
         <div id="listado-contenedor">
             <h1 id="titulo">Lista de eventos</h1>
+            <form id="buscar-contenedor" action="listaEventos.php" method="post" enctype="multipart/form-data">
+                <input type="search" name="palabra" size="10" placeholder="Introduzca una cadena">
+                <input type="submit" value="Buscar">
+            </form>
             {% for evento in eventos %}
                 <div id="item-evento">
                     <a href="evento.php?ev={{evento['id']}}">

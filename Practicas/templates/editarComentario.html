@@ -7,7 +7,7 @@
     {% block central %}
     <div id='editar-contenedor'>
         <h2>Editar Comentario</h2>
-        <form form action="editarComentario.php?ev={{ comentario['id_ev'] }}&cm={{ comentario['id'] }}" method="post" id="formulario">
+        <form form action="editarComentario.php?ev={{ comentario['id_ev'] }}&cm={{ comentario['id'] }}" method="post" id="formulario"  enctype="multipart/form-data">
             <label>Comentario</label><br>
             <textarea name='comentario' id='comentario' oninput="reemplazarPalabrasFeas('{{palabras|json_encode}}')" rows="50" cols="50">{{comentario['comentario']}}</textarea><br>
             <input type="submit" value="Guardar" id="guardar">

@@ -13,8 +13,23 @@
         $identificado = true;
     }
 
-    $eventos = $conexion->getEventos();
     $usuario =  $conexion->getUsuario($_SESSION['nickUsuario']);
+
+    $conexion->buscarEvento($palabra);
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $eventos = $conexion->buscarEvento($_POST['palabra']);
+
+        if($eventos == NULL){
+            $eventos = $conexion->getEventos();
+            header("url=listaEventos.php");
+        }else{
+            header("url=listaEventos.php");
+        }
+    }
+    else{
+        $eventos = $conexion->getEventos();
+    }
 
     echo $Twig->render('listaEventos.html',['identificado' => $identificado,'eventos' => $eventos,'usuario'=>$usuario]);
 ?>

@@ -76,7 +76,7 @@
     </div>
     
     {%if identificado == true %}
-        <form action="aniadirComentario.php?ev={{ evento['id'] }}" method="post" id="formulario">
+        <form action="aniadirComentario.php?ev={{ evento['id'] }}" method="post" id="formulario" enctype="multipart/form-data">
                 <label>Comentario</label><br>
                 <textarea name="comentario" id="comentario" oninput="reemplazarPalabrasFeas('{{palabras|json_encode}}')"></textarea><br> 
                 <input type="submit" value="Enviar" id="enviar">

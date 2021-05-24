@@ -7,7 +7,7 @@
     {% block central %}
     <div id="editar-contenedor">
         <h2 id="titulo">Editar evento</h2>
-        <form form action="editarEvento.php?ev={{ evento['id'] }}" method="post" id="formulario">
+        <form form action="editarEvento.php?ev={{ evento['id'] }}" method="post" id="formulario" enctype="multipart/form-data">
             <div id="formulario-editar">
                 <div id="cabecera-contenedor">
                     <label>Nombre del evento</label><br>
