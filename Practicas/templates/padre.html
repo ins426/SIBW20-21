@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="author" content="Inés Nieto Sánchez">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/search.js"></script>
         <title>Agapea</title>
         {% block css %}
 
@@ -24,7 +26,7 @@
                     <li><a href='listaEventos.php'>Lista de eventos</a></li>
                 {% endif %}
                 {%if usuario['super'] == 1 %}
-                    <li><a href='editarPermisos.html'>Lista de Usuarios</a></li>
+                    <li><a href='editarPermisos.php'>Lista de Usuarios</a></li>
                 {% endif %}
                 {%if usuario['moderador'] == 1 %}
                     <li><a href='listadoComentarios.php'>Comentarios</a></li>

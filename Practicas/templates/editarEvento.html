@@ -25,6 +25,11 @@
                     <label>Etiquetas (separadas por comas)</label><br>
                     <textarea name='etiquetas' rows="1" cols="35">{% for etiqueta in etiquetas %}{{etiqueta['texto'] | trim('\n')}}{%if not loop.last %},{% endif %}{% endfor %}
                     </textarea><br>
+                    {%if evento['publicado'] == 1 %}
+                        Publicar evento <input type="checkbox" id="publicado" name="publicado" value="1" checked>
+                    {%else %}
+                        Publicar evento <input type="checkbox" id="publicado" name="publicado" value="1">
+                    {% endif %}
                 </div>
                 <div id="descripcion-contenedor">
                     <label>Descripción</label><br>

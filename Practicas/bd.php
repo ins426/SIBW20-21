@@ -29,7 +29,7 @@ class BD{
                         $row = $res->fetch_assoc();
         
                         $evento = array('id'=>$row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
-                        'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
+                        'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono'],'publicado'=>$row['publicado']);
                     
                     }
                     else{
@@ -152,7 +152,7 @@ class BD{
 
             while($row = $res->fetch_assoc() ){
                 $eventos[$i-1] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
-                'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
+                'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono'],'publicado'=>$row['publicado']);
                 $i = $i+1;
                     
                 $statement = $this->mysqli->prepare("SELECT * FROM Eventos WHERE id =?");
@@ -416,6 +416,13 @@ class BD{
         $fechainicio = $_POST['fechainicio'];
         $fechafin = $_POST['fechafin'];
 
+        if(isset($_POST['publicado'])){
+            $publicado = $_POST['publicado'];
+        }
+        else{
+            $publicado = 0;
+        }
+
         $q = "SELECT id FROM Eventos ORDER BY id DESC LIMIT 1";
         $res = $this->mysqli->query($q);
         $row = $res->fetch_assoc();
@@ -424,8 +431,8 @@ class BD{
         $q = "ALTER TABLE Eventos AUTO_INCREMENT = $id_ultimo";
         $this->mysqli->query($q);
 
-        $q = "INSERT INTO Eventos (nombre,organizador,horainicio,horafin,descripcion,fechainicio,fechafin,icono) VALUES ('$nombre','$organizador',
-                                    '$horainicio','$horafin','$descripcion','$fechainicio','$fechafin','$file_name')";
+        $q = "INSERT INTO Eventos (nombre,organizador,horainicio,horafin,descripcion,fechainicio,fechafin,icono,publicado) VALUES ('$nombre','$organizador',
+                                    '$horainicio','$horafin','$descripcion','$fechainicio','$fechafin','$file_name','$publicado')";
         $this->mysqli->query($q);
 
         //Para obtener el id del nuevo evento insertado
@@ -505,8 +512,15 @@ class BD{
         $fechainicio = $_POST['fechainicio'];
         $fechafin = $_POST['fechafin'];
 
+        if(isset($_POST['publicado'])){
+            $publicado = $_POST['publicado'];
+        }
+        else{
+            $publicado = 0;
+        }
+
         $q = "UPDATE Eventos SET nombre='$nombre',organizador='$organizador',horainicio='$horainicio', horafin='$horafin',
-        descripcion='$descripcion',fechainicio='$fechainicio',fechafin='$fechafin' WHERE id=$id";
+        descripcion='$descripcion',fechainicio='$fechainicio',fechafin='$fechafin', publicado='$publicado' WHERE id=$id";
 
         $this->mysqli->query($q);
     }
@@ -591,15 +605,20 @@ class BD{
         }
     }
 
-    function buscarEvento($palabra){
-        $q = "SELECT * FROM Eventos WHERE descripcion LIKE '%$palabra%'";
+    function buscarEvento($palabra,$usuario){
+        $q = "SELECT * FROM Eventos WHERE descripcion LIKE '%$palabra%' or nombre LIKE '%$palabra%' ";
         $res = $this->mysqli->query($q);
 
         $i = 0;
         if($res->num_rows > 0){
             while($row = $res->fetch_assoc()){
-                $eventos[$i] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
-                'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono']);
+                if($row['publicado'] == 1){
+                    $eventos[$i] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
+                    'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono'],'publicado'=>$row['publicado']);
+                }elseif ($usuario['gestor']){
+                    $eventos[$i] = array('id' => $row['id'],'nombre'=> $row['nombre'],'organizador'=>$row['organizador'],'horainicio'=>$row['horainicio'],'horafin'=>$row['horafin'],
+                    'descripcion'=>$row['descripcion'],'fechainicio'=>$row['fechainicio'],'fechafin'=>$row['fechafin'],'icono'=>$row['icono'],'publicado'=>$row['publicado']);
+                }
                 $i++;
             }
         }else{

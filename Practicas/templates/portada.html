@@ -3,6 +3,12 @@
         <link href="../css/portada.css" rel="stylesheet" type="text/css">
     {% endblock %}
     {% block central %}
+
+        <!-----------------------Buscador----------------------->
+        <form id="buscador-contenedor">
+            <input id="buscador" type="text" size="25" onkeyup="searching(this.value)" placeholder="Buscar">
+            <div id="resultados"></div>
+        </form>
         <!------------------------------------------------------>
         <!-----------------------Portada------------------------>
         <div id="portada">
@@ -30,9 +36,16 @@
             </div>
             <div id="eventos-iconos">
             {% for evento in eventos %}
-                <a href="./evento.php?ev={{evento['id']}}"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
-                    <div class = 'texto'>{{evento['nombre']}}, {{evento['fechainicio']}} al {{evento['fechafin']}}</div>
-                </a>
+
+                {% if evento['publicado'] == 1  %}
+                    <a href="./evento.php?ev={{evento['id']}}"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
+                        <div class = 'texto'>{{evento['nombre']}}, {{evento['fechainicio']}} al {{evento['fechafin']}}</div>
+                    </a>
+                {% elseif usuario['gestor'] == 1 %}
+                    <a href="./evento.php?ev={{evento['id']}}"  style="background-image: url(../img/{{evento['icono']}});" class="item" id="icono">
+                        <div class = 'texto'>{{evento['nombre']}}, {{evento['fechainicio']}} al {{evento['fechafin']}}</div>
+                    </a>
+                {% endif %}
             {% endfor %}
             </div>
         </div> 

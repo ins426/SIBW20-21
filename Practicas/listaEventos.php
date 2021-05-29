@@ -15,7 +15,7 @@
 
     $usuario =  $conexion->getUsuario($_SESSION['nickUsuario']);
 
-    $conexion->buscarEvento($palabra);
+    $conexion->buscarEvento($palabra,$usuario);
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $eventos = $conexion->buscarEvento($_POST['palabra']);

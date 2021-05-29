@@ -181,7 +181,15 @@ a{
     height: 30px;
 }
 
+/***************************************************************************************/
 #buscar-contenedor{
     position: relative;
     left: 650px;
+}
+
+#resultados{
+    position: absolute;
+    z-index: 1;
+    display: none;
+    background-color: rgba(128, 128, 128, 0.9);
 }

@@ -272,3 +272,14 @@ a{
     width: 30px;
     height: 30px;
 }
+/********************************************************************/
+#buscador-contenedor{
+    position: absolute;
+    top: 100px;
+    left: 1550px;
+}
+
+#resultados{
+    display: none;
+    background-color: rgba(128, 128, 128);
+}
